@@ -16,15 +16,16 @@ static const char *tags[] = {"other", "term", "web", "pdf", "work", "steam"};
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
+
 	{"Gimp",      NULL,       NULL,       0,            False,       -1},
+	{"Gvim",	  NULL,       NULL,       0,            True,        -1},
 	{"URxvt",     NULL,       NULL,       1<<1,         False,       -1},
-	{NULL,		  NULL,       "scratchpad",  0,         True,       -1},
 	{"Firefox",   NULL,       NULL,       1<<2,         False,       -1},
 	{"Zathura",   NULL,       NULL,       1<<3,         False,       -1},
 	{"Pharo",     NULL,       NULL,       1<<4,         False,       -1},
 	{"Netbeans",  NULL,       NULL,       1<<4,         False,       -1},
 	{"Eclipse",   NULL,       NULL,       1<<4,         False,       -1},
-	{"Steam",     NULL,       NULL,       1<<5,         True,       0},
+	{"Steam",     NULL,       NULL,       1<<5,         True,         0},
 };
 
 /* layout(s) */
@@ -55,6 +56,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, 
 static const char *termcmd[]  = { "urxvt", NULL };
 static const char *firefoxcmd[]  = { "firefox", NULL };
 static const char *pdfcmd[]  = { "zathura", NULL };
+static const char *steamcmd[]  = { "steam", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -62,6 +64,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,				XK_f,	   spawn,		   {.v = firefoxcmd } },
 	{ MODKEY|ShiftMask,				XK_e,	   spawn,		   {.v = pdfcmd } },
+	{ MODKEY|ShiftMask,				XK_s,	   spawn,		   {.v = steamcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

@@ -6,6 +6,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'wikitopian/hardmode'
 Bundle 'godlygeek/tabular'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
@@ -16,11 +17,12 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'flazz/vim-colorschemes'
 " ##
 
-" Underline the current line with dashes in normal mode
-nnoremap <F5> yyp<c-v>$r-
+" Toggle hardmode
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
-" " Underline the current line with dashes in insert mode
-inoremap <F5> <Esc>yyp<c-v>$r-A
+" Underline the current line with dashes
+nnoremap <F5> yypVr-
+inoremap <F5> <Esc>yypVr-o
 
 set history=700
 set foldmethod=marker
@@ -43,9 +45,8 @@ set wildmode=longest,list
 set hlsearch
 set incsearch
 set ignorecase
+set smartcase
 set lazyredraw
-
-set magic
 
 set showmatch
 set matchtime=2
@@ -53,8 +54,6 @@ set matchtime=2
 set hidden
 
 set cursorline
-
-set guioptions=
 
 set splitbelow
 set splitright
@@ -114,6 +113,7 @@ function! HasPaste()
 		return ''
 	endif
 	set ignorecase
+	set smartcase
 endfunction
 
 map <leader>ss :setlocal spell!<cr>

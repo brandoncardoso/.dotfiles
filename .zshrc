@@ -18,40 +18,6 @@ if [ -f '/etc/profile.d/prll.sh' ]; then
 	. "/etc/profile.d/prll.sh"
 fi
 
-run_under_tmux() {
-	# Run $1 under session or attach if such session already exist.
-	# $2 is optional path, if no specified, will use $1 from $PATH.
-	# If you need to pass extra variables, use $2 for it as in example below..
-	# Example usage:
-	#	torrent() { run_under_tmux 'rtorrent' '/usr/local/rtorrent-git/bin/rtorrent'; }
-	#	mutt() { run_under_tmux 'mutt'; }
-	#	irc() { run_under_tmux 'irssi' "TERM='screen' command irssi"; }
-
-	# There is a bug in linux's libevent...
-	# export EVENT_NOEPOLL=1
-	command -v tmux >/dev/null 2>&1 || return 1
-
-	if [ -z "$1" ]; then return 1; fi
-	
-	local name="$1"
-	
-	if [ -n "$2" ]; then
-		local file_path="$2"
-	else
-		local file_path="command ${name}"
-	fi
-
-	if tmux has-session -t "${name}" 2>/dev/null; then
-		tmux attach -d -t "${name}"
-	else
-		tmux new-session -s "${name}" "${file_path}" \; set-option status \; set set-titles-string "${name} [tmux]"
-	fi
-}
-
-t() { run_under_tmux rtorrent; }
-
-irc() { run_under_tmux irssi "TERM='screen' command irssi"; }
-
 over_ssh() {
 	if [ -n "${SSH_CLIENT}" ]; then
 		return 0
@@ -312,7 +278,6 @@ ZSH_THEME_GIT_PROMPT_DIRTY="*" # Text to display if the branch is dirty
 ZSH_THEME_GIT_PROMPT_UNTRACKED="$"
 ZSH_THEME_GIT_PROMPT_AHEAD="+"
 ZSH_THEME_GIT_PROMPT_CLEAN="^" # Text to display if the branch is clean
-bindkey -v
 function zle-line-init zle-keymap-select {
 	RPS1="${${KEYMAP/vicmd/$COMMAND_INDICATOR}/(main|viins)/$INSERT_INDICATOR}"
 	RPS2=$RPS1
@@ -330,6 +295,14 @@ alias sleep='sudo systemctl suspend'
 alias ..='cd ..'
 alias ....='cd ../..'
 alias ......='cd ../../..'
+
+function chpwd
+{
+	if [[ $(pwd) != $HOME ]]
+	then
+		ls --color=auto
+	fi
+}
 
 alias sv='sudo vim'
 alias v='vim'
@@ -353,6 +326,7 @@ alias ls='ls -F --color=always'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
+
 
 alias nope='clear; cowsay -f stegosaurus Nope.'
 alias urandom='base64 /dev/urandom | grep -i --color'

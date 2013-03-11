@@ -1,4 +1,4 @@
-"hg6886
+"hg6896
 
 loadplugins '\.(js|penta)$'
 group user
@@ -52,7 +52,6 @@ map -count -modes=n,v <Left> <Nop>
 map -count -modes=n,v <Right> <Nop>
 map -count -modes=n,v <Up> <Nop>
 map -count -modes=n,v <Space> <count><C-d>
-set editor='urxvt -title scratchpad -geometry 86x24+40+60 -e vim <file>'
 set hlfind
 
 " vim: set ft=pentadactyl:
