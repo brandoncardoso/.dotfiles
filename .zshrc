@@ -315,6 +315,7 @@ alias connect='wicd-curses'
 alias pacman='sudo pacman-color'
 alias update='pacman -Syu'
 alias volume='alsamixer'
+alias brightness='xbacklight -set'
 
 alias mountusb='sudo mount -o gid=users,fmask=113,dmask=002 /dev/sdb1 /mnt/usb'
 alias umountusb='sudo umount /mnt/usb'

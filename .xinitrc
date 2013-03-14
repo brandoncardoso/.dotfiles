@@ -6,6 +6,7 @@ xset fp rehash &
 /usr/bin/urxvt -q -o -f &
 setxkbmap -option caps:none
 
+xbacklight -set 3 &
 unclutter &
 udiskie &
 conky | while read -r; do xsetroot -name "$REPLY"; done &

@@ -15,6 +15,7 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'honza/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'rosstimson/scala-vim-support'
 " ##
 
 " Toggle hardmode
@@ -71,9 +72,9 @@ if has("unix") && v:version >= 703
 	set clipboard+=unnamedplus
 endif
 
-syntax enable
-set background=dark
-colorscheme molokai2
+syntax on
+set background=light
+colorscheme hemisu
 
 set encoding=utf8
 
