@@ -6,6 +6,7 @@ xset fp rehash &
 /usr/bin/urxvt -q -o -f &
 setxkbmap -option caps:none
 
+feh --bg-center ~/.dotfiles/bars.png &
 xbacklight -set 3 &
 unclutter &
 udiskie &
