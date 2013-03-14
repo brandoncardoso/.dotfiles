@@ -7,7 +7,7 @@ xset fp rehash &
 setxkbmap -option caps:none
 
 feh --bg-center ~/.dotfiles/bars.png &
-xbacklight -set 3 &
+xbacklight -set 7 &
 unclutter &
 udiskie &
 conky | while read -r; do xsetroot -name "$REPLY"; done &

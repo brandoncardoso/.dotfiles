@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */ 
 static const char font[] = "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#cccccc";
-static const char normbgcolor[]     = "#fefefe";
+static const char normbgcolor[]     = "#fdf6e3";
 static const char normfgcolor[]     = "#2b2b2b";
 static const char selbordercolor[]  = "#ff00ff";
 static const char selbgcolor[]      = "#cccccc";

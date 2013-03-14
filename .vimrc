@@ -74,7 +74,7 @@ endif
 
 syntax on
 set background=light
-colorscheme hemisu
+colorscheme solarized
 
 set encoding=utf8
 
