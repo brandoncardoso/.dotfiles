@@ -74,6 +74,7 @@ endif
 
 syntax on
 set background=light
+"let g:solarized_termcolors=256
 colorscheme solarized
 
 set encoding=utf8
