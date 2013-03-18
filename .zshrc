@@ -307,7 +307,6 @@ function chpwd
 alias sv='sudo vim'
 alias v='vim'
 
-alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 

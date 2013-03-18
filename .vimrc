@@ -6,7 +6,6 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'wikitopian/hardmode'
 Bundle 'godlygeek/tabular'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
@@ -17,9 +16,6 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'rosstimson/scala-vim-support'
 " ##
-
-" Toggle hardmode
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 " Underline the current line with dashes
 nnoremap <F5> yypVr-
@@ -73,9 +69,8 @@ if has("unix") && v:version >= 703
 endif
 
 syntax on
-set background=light
-"let g:solarized_termcolors=256
-colorscheme solarized
+set bg=light
+colorscheme gruvbox
 
 set encoding=utf8
 

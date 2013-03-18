@@ -2,6 +2,56 @@
 
 loadplugins '\.(js|penta)$'
 group user
+highlight Bell background-color: #af2334 !important; color: inherit; opacity: 0.6;
+highlight -link=Normal Cmd color: #000;
+highlight -link=Cmd CmdLine background-color: #e0e0ed;
+highlight -link=Cmd CmdOutput
+highlight CmdPrompt color: #000 !important; background-color: #c7a3a2 !important; font: bold 12px monospace; padding: 0 6px 0 2px !important; margin-right: 0.5em !important;
+highlight -link=CmdLine CompDesc color: #3e3e3e; background-color: #f5f5f5; font-size: 10px; font-family: monospace;
+highlight -link=Cmd CompGroup color: #3e3e3e; background-color: #f5f5f5; font-weight: bold;
+highlight CompIcon width: 18px; min-width: 16px; display: inline-block; margin-right: .5ex; border-right: 1px solid #000;
+highlight -link=CmdLine CompItem background-color: #f7f7f7;
+highlight CompItem:nth-child(2n+1) background: rgba(0, 0, 0, .04); background-color: #fff;
+highlight CompItem[selected] background: yellow; background-color: #bfbfbc;
+highlight 'CompItem[selected] Filter' background-color: #c7a3a2; color: #82102A; font-weight: bold;
+highlight CompItem[selected]:nth-child(2n+1) background-color: #bfbfbc !important;
+highlight CompLess::after content: " ^ ";
+highlight CompMore::after content: " ^ ";
+highlight -link=CmdLine CompMsg
+highlight CompResult background:inherit;color:inherit;width:40%;overflow:hidden;
+highlight -link=CmdLine CompTitle width: 45%; overflow: hidden; font-style: italic; font-weight: bold;
+highlight -link=CompTitle CompTitle>*
+highlight CompTitleSep border-bottom:1px solid #000;
+highlight ErrorMsg background-color:#af2334 !important; color:#fff !important; font:bold 12px monospace; padding:0 7px !important;
+highlight Filter font-weight: bold; background-color: #a2b2c7;
+highlight Hint font: bold 10px "Droid Sans Mono", monospace !important; margin: -.2ex; padding: 1px !important; outline: 1px solid rgba(0, 0, 0, .5); background: #e5ed90 !important; color: #000 !important; font-size: inherit !important; border: 1px outset #e5ed90;
+highlight HintActive background-color: #88FF00 !important; color: #000 !important; background: #e0afb0 !important; font-weight: bold !important; font-size: inherit;
+highlight HintElem background-color: yellow  !important; color: #000 !important; background: #afc4e0 !important; font-weight: bold !important; font-size: inherit;
+highlight -link=Hint HintImage
+highlight Indicator color: #893f44; width: 2em; text-align: center; background: inherit;
+highlight InfoMsg background-color:#9be6af !important; color:#000 !important; font:bold 12px monospace; padding:0 7px !important;
+highlight ModeMsg background-color:#c7a3a2 !important; color:#000 !important; font:bold 10px monospace; padding:0 7px !important;
+highlight MoreMsg background-color:#9be6af !important; color:#000 !important; font:bold 10px monospace !important; padding:0 7px !important;
+highlight Normal font-size:12px; font-family: sans-serif; font-weight: normal;
+highlight Preview color: #000; opacity: 0.5;
+highlight Question color: inherit; background: inherit; font-weight: bold;
+highlight -link=InfoMsg StatusInfoMsg
+highlight -link=Normal StatusLine
+highlight 'StatusLine CmdLine' background-color: inherit;
+highlight -link=StatusLine StatusLineBroken color: #ac0000; font-weight: bold;
+highlight -link=StatusLine StatusLineExtended color: #000000; background-color: #afffaf; font-weight: bold;
+highlight -link=StatusLine StatusLineNormal color: #000; background-color: #e2e2de;
+highlight -link=StatusLine StatusLineSecure color: #000; background-color: #d1e0f0 !important;
+highlight -link=ModeMsg StatusModeMsg
+highlight -link=MoreMsg StatusMoreMsg
+highlight -link=WarningMsg StatusWarningMsg
+highlight Statusline color: #000; background-color: inherit;
+highlight Tag color: #40893f; background: inherit; font-weight: bold;
+highlight Title color: #000; font-weight: bold; font: bold 12px/220% sans-serif;
+highlight URL text-decoration: none; color: #3f4189; background: inherit;
+highlight URL:hover text-decoration: underline; cursor: pointer; color: #893f44; background: inherit;
+highlight URLExtra color: #3f4189; background: inherit; opacity: 0.7;
+highlight WarningMsg background-color:inherit !important; color:#af2334 !important; font:bold 10px monospace !important; padding:0 7px !important;
 map -count -modes=n,v <C-j> <count>:downloads<Return>
 map -count -modes=n,v <Down> <Nop>
 map -count -modes=n,v <Left> <Nop>
