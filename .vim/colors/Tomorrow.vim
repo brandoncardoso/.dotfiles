@@ -5,7 +5,7 @@
 
 " Default GUI Colours
 let s:foreground = "4d4d4c"
-let s:background = "fafafa"
+let s:background = "ffffff"
 let s:selection = "d6d6d6"
 let s:line = "efefef"
 let s:comment = "8e908c"
@@ -314,7 +314,12 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("pythonInclude", s:purple, "", "")
 	call <SID>X("pythonStatement", s:purple, "", "")
 	call <SID>X("pythonConditional", s:purple, "", "")
+	call <SID>X("pythonRepeat", s:purple, "", "")
+	call <SID>X("pythonException", s:purple, "", "")
 	call <SID>X("pythonFunction", s:blue, "", "")
+	call <SID>X("pythonPreCondit", s:purple, "", "")
+	call <SID>X("pythonRepeat", s:aqua, "", "")
+	call <SID>X("pythonExClass", s:orange, "", "")
 
 	" JavaScript Highlighting
 	call <SID>X("javaScriptBraces", s:foreground, "", "")
@@ -341,6 +346,20 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("luaCondElseif", s:purple, "", "")
 	call <SID>X("luaCond", s:purple, "", "")
 	call <SID>X("luaCondEnd", s:purple, "", "")
+
+	" Cucumber Highlighting
+	call <SID>X("cucumberGiven", s:blue, "", "")
+	call <SID>X("cucumberGivenAnd", s:blue, "", "")
+
+	" Go Highlighting
+	call <SID>X("goDirective", s:purple, "", "")
+	call <SID>X("goDeclaration", s:purple, "", "")
+	call <SID>X("goStatement", s:purple, "", "")
+	call <SID>X("goConditional", s:purple, "", "")
+	call <SID>X("goConstants", s:orange, "", "")
+	call <SID>X("goTodo", s:yellow, "", "")
+	call <SID>X("goDeclType", s:blue, "", "")
+	call <SID>X("goBuiltins", s:purple, "", "")
 
 	" Delete Functions
 	delf <SID>X

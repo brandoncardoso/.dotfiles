@@ -15,6 +15,8 @@ Bundle 'honza/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'rosstimson/scala-vim-support'
+Bundle 'lukerandall/haskellmode-vim'
+Bundle 'dhruvasagar/vim-table-mode'
 " ##
 
 " Underline the current line with dashes
@@ -38,6 +40,8 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 set wildmode=longest,list
+
+au FileType text setlocal spell
 
 set hlsearch
 set incsearch
@@ -72,7 +76,7 @@ syntax on
 set bg=light
 colorscheme gruvbox
 
-set encoding=utf8
+set encoding=utf-8
 
 try
 	lang en_US
