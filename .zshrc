@@ -11,8 +11,6 @@ export TMPDIR="$TMP"
 export TMPPREFIX="${TMPDIR}/zsh"
 export SUDO_EDITOR="/usr/bin/vim -p -X"
 
-source ~/.scripts/zsh_prompt/git_info.zsh
-
 # Functions
 if [ -f '/etc/profile.d/prll.sh' ]; then
 	. "/etc/profile.d/prll.sh"
@@ -110,84 +108,9 @@ termtitle() {
 		esac
 }
 
-git_check_if_worktree() {
-# This function intend to be only executed in chpwd().
-# Check if the current path is in git repo.
-
-# We would want stop this function, on some big git repos it can take some time to cd into.
-	if [ -n "${skip_zsh_git}" ]; then
-		git_pwd_is_worktree='false'
-		return 1
-	fi
-# The : separated list of paths where we will run check for git repo.
-# If not set, then we will do it only for /root and /home.
-	if [ "${UID}" = '0' ]; then
-# running 'git' in repo changes owner of git's index files to root, skip prompt git magic if CWD=/home/*
-		git_check_if_workdir_path="${git_check_if_workdir_path:-/root}"
-	else
-		git_check_if_workdir_path="${git_check_if_workdir_path:-/home}"
-		git_check_if_workdir_path_exclude="${git_check_if_workdir_path_exclude:-${HOME}/_sshfs}"
-	fi
-
-	if begin_with "${PWD}" ${=git_check_if_workdir_path//:/ }; then
-		if ! begin_with "${PWD}" ${=git_check_if_workdir_path_exclude//:/ }; then
-			local git_pwd_is_worktree_match='true'
-		else
-			local git_pwd_is_worktree_match='false'
-		fi
-	fi
-
-	if ! [ "${git_pwd_is_worktree_match}" = 'true' ]; then
-		git_pwd_is_worktree='false'
-		return 1
-	fi
-
-# todo: Prevent checking for /.git or /home/.git, if PWD=/home or PWD=/ maybe...
-# damn annoying RBAC messages about Access denied there.
-	if [ -d '.git' ] || [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
-		git_pwd_is_worktree='true'
-		git_worktree_is_bare="$(git config core.bare)"
-	else
-		unset git_branch git_worktree_is_bare
-		git_pwd_is_worktree='false'
-	fi
-}
-
-git_branch() {
-	git_branch="$(git symbolic-ref HEAD 2>/dev/null)"
-	git_branch="${git_branch##*/}"
-	git_branch="${git_branch:-no branch}"
-}
-
-git_dirty() {
-	if [ "${git_worktree_is_bare}" = 'false' ] && [ -n "$(git status --untracked-files='no' --porcelain)" ]; then
-		git_dirty='%F{green}*'
-	else
-		unset git_dirty
-	fi
-}
-
-precmd() {
-# Set terminal title.
-	termtitle precmd
-
-	if [ "${git_pwd_is_worktree}" = 'true' ]; then
-		git_branch
-		git_dirty
-
-		git_prompt=" %F{blue}[%F{253}${git_branch}${git_dirty}%F{blue}]"
-	else
-		unset git_prompt
-	fi
-}
-
 preexec() {
 # Set terminal title along with current executed command pass as second argument
 	termtitle preexec "${(V)1}"
-}
-
-chpwd() {
-	git_check_if_worktree
 }
 
 man() {
@@ -209,17 +132,6 @@ rbac_auth() {
 	fi
 }
 #rbac_auth
-
-# Check if we started zsh in git worktree, useful with tmux when your new zsh may spawn in source dir.
-git_check_if_worktree
-
-if [ "${git_pwd_is_worktree}" = 'true' ]; then
-	git_branch
-	git_dirty
-	git_prompt=" %F{blue}[%F{253}${git_branch}${git_dirty}%F{blue}]"
-else
-	unset git_prompt
-	fi
 
 if [ ! -d "${TMP}" ]; then mkdir "${TMP}"; fi
 
@@ -263,21 +175,13 @@ cyan='\e[0;36m'
 CYAN='\e[1;36m'
 NC='\e[0m'
 
-PROMPT="%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%} > %{$fg[yellow]%}%c%{$reset_color%}$git_prompt_info%# "
+PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%} > %{$fg[blue]%}%~ %{$reset_color%}%# "
 RPS1="$INSERT_INDICATOR"
 RPS2=$RPS1
 
 INSERT_INDICATOR="%{$fg[cyan]%}<<<%{$reset_color%}"
 COMMAND_INDICATOR="%{$fg[yellow]%}<<<%{$reset_color%}"
 
-
-# git theming default: Variables for theming the git info prompt
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[cyan]%}<"
-ZSH_THEME_GIT_PROMPT_SUFFIX="> %{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="*" # Text to display if the branch is dirty
-ZSH_THEME_GIT_PROMPT_UNTRACKED="$"
-ZSH_THEME_GIT_PROMPT_AHEAD="+"
-ZSH_THEME_GIT_PROMPT_CLEAN="^" # Text to display if the branch is clean
 function zle-line-init zle-keymap-select {
 	RPS1="${${KEYMAP/vicmd/$COMMAND_INDICATOR}/(main|viins)/$INSERT_INDICATOR}"
 	RPS2=$RPS1
@@ -310,8 +214,10 @@ alias v='vim'
 alias mv='mv -i'
 alias cp='cp -i'
 
+alias playrct='sudo mount -o loop ~/.wine/cds/Roller_Coaster_Tycoon/Roller\ Coaster\ Tycoon\ Expansions.iso ~/.wine/drive_a && wine .wine/drive_c/Program\ Files\ \(x86\)/Hasbro\ Interactive/RollerCoaster\ Tycoon/RCT.EXE'
+
 alias connect='wicd-curses'
-alias pacman='sudo pacman-color'
+alias pacman='sudo pacman'
 alias update='pacman -Syu'
 alias volume='alsamixer'
 alias brightness='xbacklight -set'

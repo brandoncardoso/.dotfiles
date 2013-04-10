@@ -144,7 +144,6 @@ endfunction
 " }}}
 
 " Vanilla colorscheme ----------------------------------------------------------
-
 " General UI: {{{
 
 " Normal text
@@ -446,3 +445,6 @@ call s:HL('vimCommentTitle', 'light4', '', 'bold,italic')
 "hi! def link vimUserFunc Function
 
 " }}}
+
+hi IndentGuidesOdd guibg=red ctermbg=3
+hi IndentGuidesEven guibg=green ctermbg=4

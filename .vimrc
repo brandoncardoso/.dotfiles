@@ -17,7 +17,15 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'rosstimson/scala-vim-support'
 Bundle 'lukerandall/haskellmode-vim'
 Bundle 'dhruvasagar/vim-table-mode'
+Bundle 'chazmcgarvey/vimcoder'
 " ##
+
+if has("gui_running")
+	set guioptions-=m
+	set guioptions-=T
+	set guioptions-=r
+	colorscheme solarized
+endif
 
 " Underline the current line with dashes
 nnoremap <F5> yypVr-
@@ -42,6 +50,7 @@ set whichwrap+=<,>,h,l
 set wildmode=longest,list
 
 au FileType text setlocal spell
+au FileType text setlocal wrap
 
 set hlsearch
 set incsearch
