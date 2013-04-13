@@ -11,12 +11,8 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
-Bundle 'honza/snipmate-snippets'
+Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'rosstimson/scala-vim-support'
-Bundle 'lukerandall/haskellmode-vim'
-Bundle 'dhruvasagar/vim-table-mode'
 Bundle 'chazmcgarvey/vimcoder'
 " ##
 
