@@ -32,7 +32,7 @@ set foldmethod=marker
 
 let mapleader=","
 
-set scrolloff=7
+set scrolloff=0
 
 set wildmenu
 
