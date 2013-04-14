@@ -1,12 +1,16 @@
 xrdb -merge ~/.Xresources
 
+#screen powersave
+xset +dpms
+xset dpms 0 0 300
+
 xset +fp /usr/share/fonts/local
 xset fp rehash &
 
 /usr/bin/urxvt -q -o -f &
 setxkbmap -option caps:none
 
-feh --bg-center ~/.dotfiles/oberon.jpg &
+feh --bg-center ~/.dotfiles/triangles.png &
 xbacklight -set 7 &
 unclutter &
 udiskie &
