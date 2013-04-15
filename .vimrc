@@ -13,15 +13,7 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
-Bundle 'chazmcgarvey/vimcoder'
 " ##
-
-if has("gui_running")
-	set guioptions-=m
-	set guioptions-=T
-	set guioptions-=r
-	colorscheme solarized
-endif
 
 " Underline the current line with dashes
 nnoremap <F5> yypVr-
@@ -79,7 +71,15 @@ endif
 
 syntax on
 set bg=light
+set t_Co=256
 colorscheme gruvbox
+
+if has("gui_running")
+	set guioptions-=m
+	set guioptions-=T
+	set guioptions-=r
+	colorscheme solarized
+endif
 
 set encoding=utf-8
 

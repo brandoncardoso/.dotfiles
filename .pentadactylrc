@@ -1,4 +1,4 @@
-"hg6896
+"hg6904
 
 loadplugins '\.(js|penta)$'
 group user
@@ -58,6 +58,7 @@ map -count -modes=n,v <Left> <Nop>
 map -count -modes=n,v <Right> <Nop>
 map -count -modes=n,v <Up> <Nop>
 map -count -modes=n,v <Space> <count><C-d>
+set editor='gvim -f -geometry 86x24+40+60 +<line> +"sil! call cursor(0, <column>)" <file>'
 set hlfind
 
 " vim: set ft=pentadactyl:

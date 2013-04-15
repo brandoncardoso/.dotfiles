@@ -25,7 +25,7 @@ over_ssh() {
 }
 
 reload () {
-    exec "${SHELL}" "$@"
+	exec "${SHELL}" "$@"
 }
 
 confirm() {
@@ -93,23 +93,23 @@ begin_with() {
 termtitle() {
 	case "$TERM" in
 		rxvt*|xterm|nxterm|gnome|screen|screen-*)
-		local prompt_host="${(%):-%m}"
-		local prompt_user="${(%):-%n}"
-		local prompt_char="${(%):-%~}"
-	case "$1" in
-		precmd)
-		printf '\e]0;%s@%s: %s\a' "${prompt_user}" "${prompt_host}" "${prompt_char}"
-		;;
-		preexec)
-		printf '\e]0;%s [%s@%s: %s]\a' "$2" "${prompt_user}" "${prompt_host}" "${prompt_char}"
-		;;
+			local prompt_host="${(%):-%m}"
+			local prompt_user="${(%):-%n}"
+			local prompt_char="${(%):-%~}"
+			case "$1" in
+				precmd)
+					printf '\e]0;%s@%s: %s\a' "${prompt_user}" "${prompt_host}" "${prompt_char}"
+					;;
+				preexec)
+					printf '\e]0;%s [%s@%s: %s]\a' "$2" "${prompt_user}" "${prompt_host}" "${prompt_char}"
+					;;
+			esac
+			;;
 	esac
-		;;
-		esac
 }
 
 preexec() {
-# Set terminal title along with current executed command pass as second argument
+	# Set terminal title along with current executed command pass as second argument
 	termtitle preexec "${(V)1}"
 }
 
@@ -183,9 +183,9 @@ INSERT_INDICATOR="%{$fg[cyan]%}<<<%{$reset_color%}"
 COMMAND_INDICATOR="%{$fg[yellow]%}<<<%{$reset_color%}"
 
 function zle-line-init zle-keymap-select {
-	RPS1="${${KEYMAP/vicmd/$COMMAND_INDICATOR}/(main|viins)/$INSERT_INDICATOR}"
-	RPS2=$RPS1
-	zle reset-prompt
+RPS1="${${KEYMAP/vicmd/$COMMAND_INDICATOR}/(main|viins)/$INSERT_INDICATOR}"
+RPS2=$RPS1
+zle reset-prompt
 }
 
 zle -N zle-line-init
@@ -228,7 +228,7 @@ alias umountusb='sudo umount /mnt/usb'
 alias grep='grep --color=auto'
 alias df='df -h'
 
-alias ls='ls -F --color=always'
+alias ls='ls -Fh --color=always'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
