@@ -18,7 +18,7 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = {"other", "term", "web", "pdf", "work", "steam"};
+static const char *tags[] = {"other", "term", "web", "work", "steam"};
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -27,11 +27,10 @@ static const Rule rules[] = {
 	{"Gvim",	  NULL,       NULL,       0,            True,        -1},
 	{"URxvt",     NULL,       NULL,       1<<1,         False,       -1},
 	{"Firefox",   NULL,       NULL,       1<<2,         False,       -1},
-	{"Zathura",   NULL,       NULL,       1<<3,         False,       -1},
-	{"Pharo",     NULL,       NULL,       1<<4,         False,       -1},
-	{"Netbeans",  NULL,       NULL,       1<<4,         False,       -1},
-	{"Eclipse",   NULL,       NULL,       1<<4,         False,       -1},
-	{"Steam",     NULL,       NULL,       1<<5,         True,         0},
+	{"Pharo",     NULL,       NULL,       1<<3,         False,       -1},
+	{"Netbeans",  NULL,       NULL,       1<<3,         False,       -1},
+	{"Eclipse",   NULL,       NULL,       1<<3,         False,       -1},
+	{"Steam",     NULL,       NULL,       1<<4,         True,         0},
 };
 
 /* layout(s) */

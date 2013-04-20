@@ -175,7 +175,7 @@ cyan='\e[0;36m'
 CYAN='\e[1;36m'
 NC='\e[0m'
 
-PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%} > %{$fg[blue]%}%~ %{$reset_color%}%# "
+PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%} > %{$fg[yellow]%}%~ %{$reset_color%}%# "
 RPS1="$INSERT_INDICATOR"
 RPS2=$RPS1
 

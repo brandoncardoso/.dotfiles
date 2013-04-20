@@ -4,11 +4,10 @@ URxvt.title: URxvt
 URxvt*.transparent: 0
 URxvt*.shading: 180
 
-!URxvt.font: xft:Source Code Pro:size=9
 !URxvt.font: xft:Inconsolata:size=10
 URxvt.font: xft:Envy Code R:size=10
 XTerm*.faceName: xft:Inconsolata:size=10
-URxvt.letterSpace: -1
+URxvt.letterSpace: 0
 URxvt.scrollBar: false
 XTerm*.scrollBar: false
 !! drop in Solarized colorscheme for Xresources/Xdefaults
