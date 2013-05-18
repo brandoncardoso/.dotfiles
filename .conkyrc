@@ -7,4 +7,4 @@ alignment tr
 use_spacer none
 
 TEXT
-${if_mounted /mnt/usb}(USB) ${endif}(${wireless_essid wlp3s0} ${wireless_link_qual wlp3s0}%) (${cpu cpu0}% @ ${freq 0}MHz) (${battery_short} ${battery_time}) (${time %y/%m/%d %l:%M%p})
+${if_mounted /mnt/usb}[USB] ${endif}[${wireless_essid wlan1} ${wireless_link_qual wlan1}%] [${cpu cpu0}% @ ${freq 0}MHz] [${battery_short} ${battery_time}] [${time %y/%m/%d %l:%M:%S%p}]

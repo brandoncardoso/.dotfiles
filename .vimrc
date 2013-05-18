@@ -23,7 +23,7 @@ set foldmethod=marker
 
 let mapleader=","
 
-set scrolloff=0
+set scrolloff=2
 
 set wildmenu
 
@@ -71,13 +71,13 @@ endif
 syntax on
 set bg=light
 set t_Co=256
-colorscheme gruvbox
+colorscheme Tomorrow
 
 if has("gui_running")
 	set guioptions-=m
 	set guioptions-=T
 	set guioptions-=r
-	colorscheme solarized
+	colorscheme Tomorrow
 endif
 
 set encoding=utf-8

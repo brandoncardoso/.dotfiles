@@ -10,10 +10,11 @@ xset fp rehash &
 /usr/bin/urxvt -q -o -f &
 setxkbmap -option caps:none
 
-feh --bg-center ~/.dotfiles/triangles.png &
+feh --bg-center ~/.dotfiles/train.jpg &
 xbacklight -set 7 &
 unclutter &
 udiskie &
+xbindkeys &
 conky | while read -r; do xsetroot -name "$REPLY"; done &
 while true; do
 	# Log stderror to a file
