@@ -1,3 +1,10 @@
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
 URxvt.buffered: true
 URxvt.internalBorder: 4
 URxvt.title: URxvt
@@ -10,6 +17,12 @@ XTerm*.faceName: xft:Inconsolata:size=10
 URxvt.letterSpace: 0
 URxvt.scrollBar: false
 XTerm*.scrollBar: false
+
+! dzen2
+dzen2.font: -*-envy code r-*-*-*-*-*-*-*-*-*-*-*-*
+dzen2.foreground: #000000
+dzen2.background: #9dccdc
+
 !! drop in Solarized colorscheme for Xresources/Xdefaults
 
 !!SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      RGB         HSB

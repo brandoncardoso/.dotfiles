@@ -3,8 +3,8 @@ out_to_x no
 background no
 update_interval 1
 total_run_times 0
-alignment tr
 use_spacer none
+double_buffer yes
 
 TEXT
-${if_mounted /mnt/usb}[USB] ${endif}[${wireless_essid wlan1} ${wireless_link_qual wlan1}%] [${cpu cpu0}% @ ${freq 0}MHz] [${battery_short} ${battery_time}] [${time %y/%m/%d %l:%M:%S%p}]
+${kernel}   |   ${wireless_essid wlan1} ${wireless_link_qual wlan1}%   |   ${cpu cpu0}% @ ${freq 0}MHz   |   ${battery_short} ${battery_time}   |   ${time %y/%m/%d %l:%M:%S}

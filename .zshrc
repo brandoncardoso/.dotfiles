@@ -179,8 +179,8 @@ PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%} > %{$fg[y
 RPS1="$INSERT_INDICATOR"
 RPS2=$RPS1
 
-INSERT_INDICATOR="%{$fg[cyan]%}<<<%{$reset_color%}"
-COMMAND_INDICATOR="%{$fg[yellow]%}<<<%{$reset_color%}"
+INSERT_INDICATOR="%{$fg[blue]%}<<<%{$reset_color%}"
+COMMAND_INDICATOR="%{$fg[red]%}<<<%{$reset_color%}"
 
 function zle-line-init zle-keymap-select {
 RPS1="${${KEYMAP/vicmd/$COMMAND_INDICATOR}/(main|viins)/$INSERT_INDICATOR}"
@@ -215,6 +215,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 
 alias playrct='sudo mount -o loop ~/.wine/cds/Roller_Coaster_Tycoon/Roller\ Coaster\ Tycoon\ Expansions.iso ~/.wine/drive_a && wine .wine/drive_c/Program\ Files\ \(x86\)/Hasbro\ Interactive/RollerCoaster\ Tycoon/RCT.EXE'
+alias mwbcalc='java -jar ~/dev/java_MWBuildingCalc/MWBuildingCalc.jar'
 
 alias connect='wicd-curses'
 alias pacman='sudo pacman'

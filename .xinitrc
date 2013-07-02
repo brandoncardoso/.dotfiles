@@ -15,7 +15,9 @@ xbacklight -set 7 &
 unclutter &
 udiskie &
 xbindkeys &
+#(sleep 1s && conky | dzen2 -x '720' -w '640' -h '15' -e '' -fg '#000000' -bg '#ffffff' -ta r -fn '-*-envy code r-*-*-*-*-13-*-*-*-*-*-*-*' -p ) &
 conky | while read -r; do xsetroot -name "$REPLY"; done &
+
 while true; do
 	# Log stderror to a file
 	dwm 2> ~/.dwm.log
