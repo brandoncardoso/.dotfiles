@@ -2,9 +2,9 @@
 static const char font[] = "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#cccccc";
 static const char normbgcolor[]     = "#ffffff";
-static const char normfgcolor[]     = "#000000";
+static const char normfgcolor[]     = "#bbbbbb";
 static const char selbordercolor[]  = "#dc5943";
-static const char selbgcolor[]      = "#9dccdc";
+static const char selbgcolor[]      = "#ffffff";
 static const char selfgcolor[]      = "#000000"; 
 //static const char normbordercolor[] = "#000000";
 //static const char normbgcolor[]     = "#2b2b2b";

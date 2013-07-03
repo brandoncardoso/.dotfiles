@@ -7,4 +7,4 @@ use_spacer none
 double_buffer yes
 
 TEXT
-${kernel}   |   ${wireless_essid wlan1} ${wireless_link_qual wlan1}%   |   ${cpu cpu0}% @ ${freq 0}MHz   |   ${battery_short} ${battery_time}   |   ${time %y/%m/%d %l:%M:%S}
+^i(/home/pazuru/.dzen2/icons/wifi_02.xbm) ${wireless_essid wlan1} @ ${wireless_link_qual wlan1}% ^fg(\#dc5943)|^fg() ^i(/home/pazuru/.dzen2/icons/cpu.xbm) ${cpu cpu0}% @ ${freq 0}MHz ^fg(\#dc5943)|^fg() ^i(/home/pazuru/.dzen2/icons/bat_empty_02.xbm) ${battery_short} ${battery_time} ^fg(\#dc5943)|^fg() ^i(/home/pazuru/.dzen2/icons/clock.xbm) ${time %y/%m/%d %l:%M:%S}
