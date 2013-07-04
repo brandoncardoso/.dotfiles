@@ -1,10 +1,10 @@
 /* See LICENSE file for copyright and license details. */ 
 static const char font[] = "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#cccccc";
-static const char normbgcolor[]     = "#ffffff";
+static const char normbgcolor[]     = "#fbfbfb";
 static const char normfgcolor[]     = "#bbbbbb";
 static const char selbordercolor[]  = "#dc5943";
-static const char selbgcolor[]      = "#ffffff";
+static const char selbgcolor[]      = "#fbfbfb";
 static const char selfgcolor[]      = "#000000"; 
 //static const char normbordercolor[] = "#000000";
 //static const char normbgcolor[]     = "#2b2b2b";
