@@ -13,7 +13,7 @@ static const char selfgcolor[]      = "#000000";
 //static const char selbgcolor[]      = "#5f5f5f";
 //static const char selfgcolor[]      = "#ffffff"; 
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int snap      = 0;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
@@ -21,16 +21,17 @@ static const Bool topbar            = True;     /* False means bottom bar */
 static const char *tags[] = {"other", "term", "web", "work", "games"};
 
 static const Rule rules[] = {
-	/* class      instance    title       tags mask     isfloating   monitor */
+	/* class              instance    title       tags mask     isfloating   monitor */
 
-	{"Gimp",      NULL,       NULL,       0,            False,       -1},
-	{"Gvim",	  NULL,       NULL,       0,            True,        -1},
-	{"URxvt",     NULL,       NULL,       1<<1,         False,       -1},
-	{"Firefox",   NULL,       NULL,       1<<2,         False,       -1},
-	{"Pharo",     NULL,       NULL,       1<<3,         False,       -1},
-	{"Netbeans",  NULL,       NULL,       1<<3,         False,       -1},
-	{"Eclipse",   NULL,       NULL,       1<<3,         False,       -1},
-	{"Steam",     NULL,       NULL,       1<<4,         True,         0},
+	{"Gimp",              NULL,       NULL,       0,            False,       -1},
+	{"Gvim",              NULL,       NULL,       0,            True,        -1},
+	{"URxvt",             NULL,       NULL,       1<<1,         False,       -1},
+	{"Firefox",           NULL,       NULL,       1<<2,         False,       -1},
+	{"Pharo",             NULL,       NULL,       1<<3,         False,       -1},
+	{"Netbeans",          NULL,       NULL,       1<<3,         False,       -1},
+	{"Eclipse",           NULL,       NULL,       1<<3,         False,       -1},
+	{"Steam",             NULL,       NULL,       1<<4,         True,         0},
+	{"sun-applet-Main",   NULL,       NULL,       0,            True,        -1},
 };
 
 /* layout(s) */

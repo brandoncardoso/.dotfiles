@@ -10,7 +10,7 @@ xset fp rehash &
 /usr/bin/urxvt -q -o -f &
 setxkbmap -option caps:none
 
-feh --bg-fill ~/.dotfiles/rhombuswhite.png &
+feh --bg-fill ~/.dotfiles/airplanedragons.jpg &
 xbacklight -set 7 &
 unclutter &
 udiskie &

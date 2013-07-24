@@ -132,6 +132,8 @@ for prefix in ['i','n','v']
 	endfor
 endfor
 
+nnoremap <leader>n :noh<cr>
+
 "Easy split navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
