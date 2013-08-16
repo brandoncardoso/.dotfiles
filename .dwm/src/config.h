@@ -1,1 +1,1 @@
-/home/pazuru/.dwm/config.h
+/home/brandon/.dwm/config.h
