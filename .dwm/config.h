@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */ 
-static const char font[] = "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
-static const char normbordercolor[] = "#cccccc";
+static const char font[] = "-*-inconsolata-*-*-*-*-13-*-*-*-*-*-*-*";
+static const char normbordercolor[] = "#fbfbfb";
 static const char normbgcolor[]     = "#fbfbfb";
 static const char normfgcolor[]     = "#bbbbbb";
 static const char selbordercolor[]  = "#dc5943";
@@ -27,6 +27,7 @@ static const Rule rules[] = {
 	{"Gvim",              NULL,       NULL,       0,            True,        -1},
 	{"URxvt",             NULL,       NULL,       1<<1,         False,       -1},
 	{"Firefox",           NULL,       NULL,       1<<2,         False,       -1},
+	{"Chromium",          NULL,       NULL,       1<<2,         False,       -1},
 	{"Pharo",             NULL,       NULL,       1<<3,         False,       -1},
 	{"Netbeans",          NULL,       NULL,       1<<3,         False,       -1},
 	{"Eclipse",           NULL,       NULL,       1<<3,         False,       -1},
@@ -61,6 +62,7 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
 static const char *firefoxcmd[]  = { "firefox", NULL };
+static const char *chromecmd[]  = { "chromium", NULL };
 static const char *pdfcmd[]  = { "zathura", NULL };
 static const char *steamcmd[]  = { "steam", NULL };
 
@@ -69,6 +71,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,				XK_f,	   spawn,		   {.v = firefoxcmd } },
+	{ MODKEY|ShiftMask,				XK_g,	   spawn,		   {.v = chromecmd } },
 	{ MODKEY|ShiftMask,				XK_e,	   spawn,		   {.v = pdfcmd } },
 	{ MODKEY|ShiftMask,				XK_s,	   spawn,		   {.v = steamcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },

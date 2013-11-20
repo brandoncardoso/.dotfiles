@@ -8,18 +8,18 @@ Xft.rgba: rgb
 URxvt.buffered: true
 URxvt.internalBorder: 4
 URxvt.title: URxvt
-URxvt*.transparent: 0
-URxvt*.shading: 180
+URxvt*.transparent: false
+URxvt*.shading: 100
 
 !URxvt.font: xft:Inconsolata:size=12
-URxvt.font: xft:Envy Code R:size=10
-XTerm*.faceName: xft:Inconsolata:size=10
+URxvt.font: xft:proggyclean:size=11
+XTerm*.faceName: xft:Proggyclean:size=11
 URxvt.letterSpace: 0
 URxvt.scrollBar: false
 XTerm*.scrollBar: false
 
 ! dzen2
-dzen2.font: -*-envy code r-*-*-*-*-*-*-*-*-*-*-*-*
+dzen2.font: -*-proggyclean-*-*-*-*-*-*-*-*-*-*-*-*
 dzen2.foreground: #000000
 dzen2.background: #9dccdc
 

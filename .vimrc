@@ -8,11 +8,22 @@ Bundle 'gmarik/vundle'
 
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
+Bundle 'godlygeek/tabular'
+Bundle 'itchyny/lightline.vim'
+Bundle 'FredKSchott/CoVim'
 " ##
+
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
+
+let CoVim_default_name = "brandon"
+let CoVim_default_port = "7777"  
 
 " Underline the current line with dashes
 nnoremap <F5> yypVr-

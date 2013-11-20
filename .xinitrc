@@ -10,11 +10,15 @@ xset fp rehash &
 /usr/bin/urxvt -q -o -f &
 setxkbmap -option caps:none
 
-feh --bg-fill ~/.dotfiles/airplanedragons.jpg &
+feh --bg-fill ~/.dotfiles/snoo.png &
+
+redshift -l 43.67:-79.4 &
+
 xbacklight -set 7 &
 unclutter &
 udiskie &
 xbindkeys &
+caffeine &
 (sleep 3s && conky | dzen2 -x '880' -w '480' -h '15' -e '' -fg '#000000' -bg '#fbfbfb' -ta r -fn '-*-envy code r-*-*-*-*-12-*-*-*-*-*-*-*' -p ) &
 #conky | while read -r; do xsetroot -name "$REPLY"; done &
 
