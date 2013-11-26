@@ -15,7 +15,7 @@ Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
 Bundle 'godlygeek/tabular'
 Bundle 'itchyny/lightline.vim'
-Bundle 'FredKSchott/CoVim'
+Bundle 'bronson/vim-trailing-whitespace'
 " ##
 
 let g:lightline = {
