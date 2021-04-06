@@ -19,8 +19,8 @@ bspc config border_width       4
 bspc config window_gap         16
 
 # monocle
-bspc config borderless_monocle true
-bspc config gapless_monocle true
+#bspc config borderless_monocle true
+#bspc config gapless_monocle true
 bspc config single_monocle true
 
 # border colors
@@ -50,6 +50,7 @@ bspc config auto_cancel true
 bspc config initial_polarity second_child
 bscp config center_pseudo_tiled false
 bspc config ignore_ewmh_focus true # prevent stealing focus
+#bspc config bottom_padding 30
 
 # set up displays
 bspc monitor -d 1 2 3 4 5
