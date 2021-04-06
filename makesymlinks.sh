@@ -1,21 +1,23 @@
 #!/bin/bash
 
-dir=.dotfiles
-olddir=.dotfiles_old
-files=".bashrc .config .vim .vimrc"
+# script must be run from dotfiles repo
+source_dir=$PWD
+backup_dir=~/.dotfiles_backup
+excludes=('.gitignore' '.gitmodules' 'makesymlinks.sh')
 
-
-echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
-mkdir -p ~/$olddir
+echo -n "Creating $backup_dir for backup of any existing dotfiles in ~ ..."
+mkdir -p $backup_dir
 echo "done"
 
-echo "Changing to the #dir directory..."
-cd ~/$dir
-echo "done"
-
-for file in $files; do
-	echo "Moving any existing dotfiles from ~ to $olddir"
-	mv ~/$file ~/$olddir
-	echo "Creating symlink to $file in home dir."
-	ln -s ~/$dir/$file ~/$file
+echo $excludes
+for file in $(git ls-files); do
+	if [[ " ${excludes[*]} " != *"$file"* ]]; then
+		if [[ -f ~/$file ]]; then
+			echo "Backing up ~/$file to $backup_dir..."
+			mv ~/$file $backup_dir
+		fi
+		echo "Linking ~/$file to $source_dir/$file..."
+		ln -s $source_dir/$file ~/$file
+	fi
 done
+echo "Done"
