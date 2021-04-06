@@ -20,7 +20,7 @@ FORMAT="{{ title }} - {{ artist }}"
 update_hooks() {
     while IFS= read -r id
     do
-        polybar-msg -p "$id" hook spotify-play-pause $2 1>/dev/null 2>&1
+        polybar-msg -p "$id" hook spotify-play-pause "$2" 1>/dev/null 2>&1
     done < <(echo "$1")
 }
 
@@ -29,8 +29,16 @@ EXIT_CODE=$?
 
 if [ $EXIT_CODE -eq 0 ]; then
     STATUS=$PLAYERCTL_STATUS
+	polybar-msg -p "$PARENT_BAR_PID" cmd show.spotify > /dev/null 2>&1
+	polybar-msg -p "$PARENT_BAR_PID" cmd show.spotify-next > /dev/null 2>&1
+	polybar-msg -p "$PARENT_BAR_PID" cmd show.spotify-prev > /dev/null 2>&1
+	polybar-msg -p "$PARENT_BAR_PID" cmd show.spotify-play-pause > /dev/null 2>&1
 else
     STATUS="No player is running"
+	polybar-msg -p "$PARENT_BAR_PID" cmd hide.spotify > /dev/null 2>&1
+	polybar-msg -p "$PARENT_BAR_PID" cmd hide.spotify-next > /dev/null 2>&1
+	polybar-msg -p "$PARENT_BAR_PID" cmd hide.spotify-prev > /dev/null 2>&1
+	polybar-msg -p "$PARENT_BAR_PID" cmd hide.spotify-play-pause > /dev/null 2>&1
 fi
 
 if [ "$1" == "--status" ]; then

@@ -72,7 +72,6 @@ tail = true
 ; prefix symbol is shown before the text
 format-prefix = "  "
 format = <label>
-exec-if = pgrep -x spotify
 exec = ~/.config/polybar/scripts/spotify_status2.sh
 
 
@@ -80,7 +79,6 @@ exec = ~/.config/polybar/scripts/spotify_status2.sh
 type = custom/script
 exec = echo ""
 format = <label>
-exec-if = pgrep -x spotify
 click-left = playerctl previous spotify
 
 
@@ -93,7 +91,6 @@ click-left = playerctl play-pause spotify
 
 
 [module/spotify-next]
-exec-if = pgrep -x spotify
 type = custom/script
 exec = echo ""
 format = <label>
