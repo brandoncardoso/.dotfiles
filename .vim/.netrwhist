@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/pazuru/.oh-my-zsh'
-let g:netrw_dirhist_2='/home/pazuru/.vim'
-let g:netrw_dirhist_3='/home/pazuru/.task'
-let g:netrw_dirhist_4='/home/pazuru/coursera/intro_to_python/rpsls'
-let g:netrw_dirhist_5='/home/pazuru/.colours'
-let g:netrw_dirhist_6='/home/pazuru/school/cps510/cps510-assignment'
-let g:netrw_dirhist_7='/home/pazuru/.pentadactyl'

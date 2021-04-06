@@ -2,7 +2,7 @@
 
 dir=.dotfiles
 olddir=.dotfiles_old
-files=".Xresources .dwm .bashrc .conkyrc .pentadactylrc .pentadactyl .scripts .vim .vimrc .xinitrc .zshrc"
+files=".bashrc .config .vim .vimrc"
 
 
 echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."

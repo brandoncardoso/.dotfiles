@@ -1,0 +1,206 @@
+[colors]
+background = #282828
+foreground = #ebdbb2
+red        = #fb4934
+green      = #b8bb26
+yellow     = #fabd2f
+blue       = #83a598
+purple     = #d3869b
+teal       = #8ec07c
+orange     = #fe8019
+gray       = #a89984
+
+
+[global/wm]
+margin-top = 0
+margin-bottom = 8
+
+
+[settings]
+format-padding = 4
+format-spacing = 2
+
+
+[bar/bottom]
+wm-restack = bspwm
+bottom = true
+width = 100%:-6
+height = 36
+background = #00000000
+foreground = ${colors.foreground}
+fixed-center = true
+line-size = 4
+enable-ipc = true
+
+modules-left = workspaces title
+modules-center = spotify spotify-prev spotify-play-pause spotify-next
+modules-right = pulseaudio temperature-cpu temperature-gpu wired-network calendar powermenu
+
+tray-position = right
+tray-detached = false
+tray-background = #00000000
+#tray-offset-x = -6
+
+font-0 = Noto Sans CJK JP: style=Regular: pixelsize=12; 3
+font-1 = Material Icons: style=Regular: pixelsize=16; 6
+
+
+[module/workspaces]
+type = internal/bspwm
+pin-workspaces = true
+inline-mode = false
+enable-scroll = false
+
+label-font-active = 1
+label-urgent-foreground = ${colors.red}
+
+label-empty = "  "
+label-occupied = "  "
+label-focused = "  "
+label-urgent = "  "
+
+
+[module/title]
+type = internal/xwindow
+label = [ %title% ]%{A1:bspc node -c:}  %{A}
+label-empty =
+
+
+[module/spotify]
+type = custom/script
+tail = true
+; prefix symbol is shown before the text
+format-prefix = "  "
+format = <label>
+exec-if = pgrep -x spotify
+exec = ~/.config/polybar/scripts/spotify_status2.sh
+
+
+[module/spotify-prev]
+type = custom/script
+exec = echo ""
+format = <label>
+exec-if = pgrep -x spotify
+click-left = playerctl previous spotify
+
+
+[module/spotify-play-pause]
+type = custom/ipc
+hook-0 = echo ""
+hook-1 = echo ""
+initial = 1
+click-left = playerctl play-pause spotify
+
+
+[module/spotify-next]
+exec-if = pgrep -x spotify
+type = custom/script
+exec = echo ""
+format = <label>
+click-left = playerctl next spotify
+
+
+#[module/spotify-status]
+#type = custom/script
+#interval = 2
+#format-foreground = ${colors.purple}
+#format-prefix = " "
+#format = <label>
+#exec = python3 ~/.config/polybar/scripts/spotify_status.sh -f "{artist} - {song} {play_pause}" -p "," --playpause-font=1 -t 100
+
+
+[module/temperature-cpu]
+type = internal/temperature
+interval = 2
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp2_input
+label = CPU %temperature-c%
+label-foreground = ${colors.teal}
+format-prefix = " "
+format-margin = 0
+
+
+[module/temperature-gpu]
+type = custom/script
+interval = 2
+exec = nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits
+label = GPU %output%°C
+label-foreground = ${colors.teal}
+format-offset = -16
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+use-ui-max = true
+interval = 5
+format-volume = <ramp-volume><label-volume>
+format-volume-foreground = ${colors.blue}
+format-muted-foreground = ${colors.red}
+label-urgent-foreground = ${colors.red}
+label-muted =   muted
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+
+
+[module/wired-network]
+type = internal/network
+interface = enp9s0
+interval = 3.0
+unknown-as-up = true
+format-connected = <label-connected>
+label-connected = 
+label-connected-foreground = ${colors.green}
+label-diconnected = 
+label-disconnected-foreground = ${colors.red}
+active-font = 1
+
+
+[module/calendar]
+type = custom/script
+exec = ~/.config/polybar/scripts/calendar.sh
+interval = 1
+click-left = ~/.config/polybar/scripts/calendar.sh --popup &
+
+
+[module/datetime]
+type = internal/date
+interval = 1.0
+date = %a, %b %e, %Y
+time = %l:%M:%S %p
+label = %date%    %time%
+
+
+[module/powermenu]
+type = custom/menu
+expand-right = false
+
+label-open = ""
+label-open-foreground = ${colors.yellow}
+label-close = ""
+label-close-foreground = ${colors.red}
+label-separator = "/"
+label-separator-foreground = ${colors.foreground}
+
+menu-0-foreground = ${colors.yellow}
+menu-0-0 = "Poweroff"
+menu-0-0-exec = #powermenu.open.1
+menu-0-1 = "Reboot"
+menu-0-1-exec = #powermenu.open.2
+menu-0-2 = "Logout"
+menu-0-2-exec = #powermenu.open.3
+
+menu-1-0 = "Poweroff?"
+menu-1-1 = ""
+menu-1-1-exec = "shutdown 0"
+menu-1-1-foreground = ${colors.green}
+
+menu-2-0 = "Reboot?"
+menu-2-1 = ""
+menu-2-1-exec = "reboot"
+menu-2-1-foreground = ${colors.green}
+
+menu-3-0 = "Logout?"
+menu-3-1 = ""
+menu-3-1-exec = "bspc quit"
+menu-3-1-foreground = ${colors.green}

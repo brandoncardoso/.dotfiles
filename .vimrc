@@ -1,29 +1,31 @@
 set nocompatible
+filetype off
 
 " ## VUNDLE
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'honza/vim-snippets'
-Bundle 'garbas/vim-snipmate'
-Bundle 'godlygeek/tabular'
-Bundle 'itchyny/lightline.vim'
-Bundle 'bronson/vim-trailing-whitespace'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'godlygeek/tabular'
+Plugin 'itchyny/lightline.vim'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'morhetz/gruvbox'
+call vundle#end()
 " ##
 
+filetype plugin indent on
+
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'gruvbox',
       \ }
 
-let CoVim_default_name = "brandon"
-let CoVim_default_port = "7777"  
+let mapleader=","
 
 " Underline the current line with dashes
 nnoremap <F5> yypVr-
@@ -31,8 +33,6 @@ inoremap <F5> <Esc>yypVr-o
 
 set history=700
 set foldmethod=marker
-
-let mapleader=","
 
 set scrolloff=2
 
@@ -80,16 +80,19 @@ if has("unix") && v:version >= 703
 endif
 
 syntax on
-set bg=light
+set bg=dark
 set t_Co=256
-colorscheme Tomorrow
+colorscheme gruvbox
 
 if has("gui_running")
 	set guioptions-=m
 	set guioptions-=T
 	set guioptions-=r
-	colorscheme Tomorrow
+	colorscheme gruvbox
 endif
+
+" set transparent background
+hi Normal guibg=NONE ctermbg=NONE
 
 set encoding=utf-8
 
@@ -118,7 +121,7 @@ set laststatus=2
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
 
 function! CurDir()
-	let curdir = substitute(getcwd(), "/home/pazuru/","~/","g")
+	let curdir = substitute(getcwd(),"~/","g")
 	return curdir
 endfunction
 
@@ -151,4 +154,3 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-filetype plugin indent on

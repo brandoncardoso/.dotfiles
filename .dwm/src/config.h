@@ -1,1 +1,0 @@
-/home/brandon/.dwm/config.h
