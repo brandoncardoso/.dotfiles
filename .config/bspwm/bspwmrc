@@ -6,6 +6,9 @@ pgrep -x sxhkd > /dev/null || sxhkd & # hotkey daemon
 pgrep -x polybar > /dev/null || polybar bottom & # bottom status bar
 pgrep -x picom > /dev/null || picom --experimental-backends & # x composer
 pgrep -x fcitx > /dev/null || fcitx & # imput method framework
+pgrep -x dunst > /dev/null || dunst & # notifications
+
+xsetroot -cursor_name left_pt # change cursor
 
 # constants
 bspc config top_padding        0
