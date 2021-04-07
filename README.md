@@ -18,4 +18,4 @@ Use `stow -v <folder>` to create symlinks to the configuration files in `<folder
 
 ## Preview
 As of  2021-04-06
-![preview of desktop with configurations applied][./preview.png]
+![preview of desktop with configurations applied](./preview.png)
