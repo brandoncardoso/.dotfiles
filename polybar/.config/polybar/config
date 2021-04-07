@@ -100,7 +100,7 @@ click-left = playerctl next spotify
 [module/temperature-cpu]
 type = internal/temperature
 interval = 2
-hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp2_input
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp2_input
 label = CPU %temperature-c%
 label-foreground = ${colors.teal}
 format-prefix = " "
