@@ -1,4 +1,6 @@
 *.swp
 vim/.vim/bundle/
-vim/.vim/.netrwhist
+.netrwhist
 !vim/.vim/bundle/Vundle.vim
+neovim/.config/nvim/plugged/*
+neovim/.config/nvim/undo/*
