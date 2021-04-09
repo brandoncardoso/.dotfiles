@@ -62,7 +62,7 @@ label-urgent-foreground = ${colors.yellow}
 
 [module/title]
 type = internal/xwindow
-label = [ %title% ]%{A1:bspc node -c:}  %{A}
+label = [ %title:0:150:...% ]%{A1:bspc node -c:}  %{A}
 label-empty =
 
 
