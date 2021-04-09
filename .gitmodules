@@ -4,3 +4,6 @@
 [submodule "neovim/.config/nvim/vim-plug"]
 	path = neovim/.config/nvim/vim-plug
 	url = https://github.com/junegunn/vim-plug
+[submodule "polybar/.config/polybar/scripts/polybar-pulseaudio-control"]
+	path = polybar/.config/polybar/scripts/polybar-pulseaudio-control
+	url = https://github.com/marioortizmanero/polybar-pulseaudio-control.git

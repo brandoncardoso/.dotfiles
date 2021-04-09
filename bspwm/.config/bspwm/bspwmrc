@@ -64,6 +64,7 @@ bspc rule -a Steam state=floating focus=off
 bspc rule -a mpv state=floating
 bspc rule -a discord desktop=^4
 bspc rule -a qBittorrent state=floating desktop=^5
+bspc rule -a Pavucontrol state=floating
 
 steamlib=~/.local/share/Steam    # path to your steamlibrary
 mygames="$(ls $steamlib/steamapps/appmanifest_*.acf | sed 's/[^0-9]*//g')"    # this sed command removes everything but the digits
