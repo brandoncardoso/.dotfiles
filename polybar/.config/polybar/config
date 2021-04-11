@@ -32,7 +32,7 @@ fixed-center = true
 line-size = 4
 enable-ipc = true
 
-modules-left = workspaces title
+modules-left = workspaces quickapps title
 modules-center = spotify spotify-prev spotify-play-pause spotify-next
 modules-right = pulseaudio temperature-cpu temperature-gpu wired-network calendar powermenu
 
@@ -58,6 +58,13 @@ label-occupied = "  "
 label-focused = "  "
 label-urgent = "  "
 label-urgent-foreground = ${colors.yellow}
+
+
+[module/quickapps]
+type = custom/text
+content-font = 2
+content = "%{A1:nautilus:}%{A}"
+content-padding = 4
 
 
 [module/title]
