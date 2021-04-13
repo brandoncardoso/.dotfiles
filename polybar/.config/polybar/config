@@ -70,7 +70,7 @@ label-empty =
 
 [module/title]
 type = internal/xwindow
-label = [ %title:0:150:...% ]%{A1:bspc node -c:}  %{A}
+label = [ %title:0:128:...% ]%{A1:bspc node -c:}  %{A}
 label-empty =
 
 
