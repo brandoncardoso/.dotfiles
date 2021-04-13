@@ -55,8 +55,8 @@ bspc config initial_polarity second_child
 bspc config ignore_ewmh_focus true # prevent stealing focus
 #bspc config bottom_padding 30
 
-# set up displays
-bspc monitor -d 1 2 3 4 5
+# set up workspaces/desktops
+bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 # rules
 bspc rule -a Yad state=floating layer=above

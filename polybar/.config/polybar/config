@@ -1,6 +1,7 @@
 [colors]
 background = #282828
 foreground = #ebdbb2
+black      = #1d2021
 red        = #fb4934
 green      = #b8bb26
 yellow     = #fabd2f
@@ -28,21 +29,21 @@ width = 100%:-6
 height = 36
 background = #00000000
 foreground = ${colors.foreground}
-fixed-center = true
-line-size = 4
 enable-ipc = true
+line-size = 4
 
-modules-left = workspaces quickapps title
+modules-left = workspaces title
 modules-center = spotify spotify-prev spotify-play-pause spotify-next
 modules-right = pulseaudio temperature-cpu temperature-gpu wired-network calendar powermenu
 
 tray-position = right
 tray-detached = false
 tray-background = #00000000
-#tray-offset-x = -6
+tray-offset-y = -2
 
-font-0 = Noto Sans CJK JP: style=Regular: pixelsize=12;
-font-1 = Material Icons: style=Regular: pixelsize=16; 3
+font-0 = Noto Sans CJK JP: style=Regular: pixelsize=12; 0
+font-1 = Noto Sans Mono: Code: style=Regular: pixelsize=13; 0
+font-2 = Material Icons: style=Regular: pixelsize=14; 2
 
 
 [module/workspaces]
@@ -51,20 +52,20 @@ pin-workspaces = true
 inline-mode = false
 enable-scroll = false
 
-label-font-active = 1
+format-prefix = " "
 
-label-empty = "  "
-label-occupied = "  "
-label-focused = "  "
-label-urgent = "  "
-label-urgent-foreground = ${colors.yellow}
+label-urgent = %{T2}%name%%{T}
+label-urgent-padding = 4
+label-urgent-underline = ${colors.yellow}
 
+label-focused = %{T2}%name%%{T}
+label-focused-padding = 4
+label-focused-underline = ${colors.blue}
 
-[module/quickapps]
-type = custom/text
-content-font = 2
-content = "%{A1:nautilus:}%{A}"
-content-padding = 4
+label-occupied = %{T2}%name%%{T}
+label-occupied-padding = 4
+
+label-empty =
 
 
 [module/title]
@@ -77,29 +78,29 @@ label-empty =
 type = custom/script
 tail = true
 ; prefix symbol is shown before the text
-format-prefix = "  "
+format-prefix = "%{T3} %{T}"
 format = <label>
 exec = ~/.config/polybar/scripts/spotify_status.sh
 
 
 [module/spotify-prev]
 type = custom/script
-exec = echo ""
+exec = echo "%{T3}%{T}"
 format = <label>
 click-left = playerctl previous spotify
 
 
 [module/spotify-play-pause]
 type = custom/ipc
-hook-0 = echo ""
-hook-1 = echo ""
+hook-0 = echo "%{T3}%{T}"
+hook-1 = echo "%{T3}%{T}"
 initial = 1
 click-left = playerctl play-pause spotify
 
 
 [module/spotify-next]
 type = custom/script
-exec = echo ""
+exec = echo "%{T3}%{T}"
 format = <label>
 click-left = playerctl next spotify
 
@@ -110,7 +111,8 @@ interval = 2
 hwmon-path = ${env:HWMON_PATH}
 label = CPU %temperature-c%
 label-foreground = ${colors.teal}
-format-prefix = " "
+format-prefix = "%{T3}%{T}"
+format-prefix-foreground = ${colors.teal}
 format-margin = 0
 
 
@@ -127,7 +129,7 @@ format-offset = -16
 type = custom/script
 tail = true
 format-foreground = ${colors.blue}
-exec = ~/.config/polybar/scripts/polybar-pulseaudio-control/pulseaudio-control.bash --icons-volume ",," --icon-muted "" --format='$VOL_ICON ${VOL_LEVEL}%' listen
+exec = ~/.config/polybar/scripts/polybar-pulseaudio-control/pulseaudio-control.bash --icons-volume ",," --icon-muted "" --format='%{T3}$VOL_ICON%{T} ${VOL_LEVEL}%' listen
 click-left = ~/.config/polybar/scripts/polybar-pulseaudio-control/pulseaudio-control.bash togmute
 click-middle = ~/.config/polybar/scripts/polybar-pulseaudio-control/pulseaudio-control.bash next-sink
 click-right = exec pavucontrol &
@@ -141,11 +143,10 @@ interface = enp9s0
 interval = 3.0
 unknown-as-up = true
 format-connected = <label-connected>
-label-connected = 
+label-connected = %{T3}%{T}
 label-connected-foreground = ${colors.green}
-label-diconnected = 
+label-diconnected = %{T3}%{T}
 label-disconnected-foreground = ${colors.red}
-active-font = 1
 
 
 [module/calendar]
@@ -155,21 +156,13 @@ interval = 1
 click-left = ~/.config/polybar/scripts/calendar.sh --popup &
 
 
-[module/datetime]
-type = internal/date
-interval = 1.0
-date = %a, %b %e, %Y
-time = %l:%M:%S %p
-label = %date%    %time%
-
-
 [module/powermenu]
 type = custom/menu
 expand-right = false
 
-label-open = ""
+label-open = "%{T3}%{T}"
 label-open-foreground = ${colors.yellow}
-label-close = ""
+label-close = "%{T3}%{T}"
 label-close-foreground = ${colors.red}
 label-separator = "/"
 label-separator-foreground = ${colors.foreground}
@@ -183,16 +176,16 @@ menu-0-2 = "Logout"
 menu-0-2-exec = #powermenu.open.3
 
 menu-1-0 = "Poweroff?"
-menu-1-1 = ""
+menu-1-1 = "%{T3}%{T}"
 menu-1-1-exec = "shutdown 0"
 menu-1-1-foreground = ${colors.green}
 
 menu-2-0 = "Reboot?"
-menu-2-1 = ""
+menu-2-1 = "%{T3}%{T}"
 menu-2-1-exec = "reboot"
 menu-2-1-foreground = ${colors.green}
 
 menu-3-0 = "Logout?"
-menu-3-1 = ""
+menu-3-1 = "%{T3}%{T}"
 menu-3-1-exec = "bspc quit"
 menu-3-1-foreground = ${colors.green}
