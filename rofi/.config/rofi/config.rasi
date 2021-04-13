@@ -16,7 +16,7 @@ configuration {
 	yoffset: -150;
 /*	xoffset: 0;*/
 
-	theme: "gruvbox-dark";
+	theme: "slate";
 
 	show-icons: true;
 /*	icon-theme: ;*/
