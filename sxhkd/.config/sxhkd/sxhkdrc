@@ -18,6 +18,10 @@ super + Escape
 super + shift + s
 	maim -s -u | xclip -selection clipboard -t image/png -i
 
+# scratchpad
+super + n
+	~/.config/bspwm/start_scratch.sh;id=$(cat /tmp/scratchid);bspc node $id --flag hidden;bspc node -f $id
+
 
 
 #
