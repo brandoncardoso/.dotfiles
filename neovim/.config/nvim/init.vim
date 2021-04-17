@@ -43,6 +43,8 @@ Plug 'mbbill/undotree'
 " file system explorer
 Plug 'preservim/nerdtree'
 
+" status line
+Plug 'rbong/vim-crystalline'
 
 call plug#end()
 " }}} Plugins
@@ -89,6 +91,44 @@ endif
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+" }}}
+" rbong/vim-crystalline {{{
+function! StatusLine(current, width)
+   let l:s = ''
+
+   if a:current
+      let l:s .= crystalline#mode() . crystalline#right_mode_sep('')
+   else
+      let l:s .= '%#CrystallineInactive#'
+   endif
+   let l:s .= ' %f%h%W%m%r '
+   if a:current
+      let l:s .= crystalline#right_sep('', 'Fill') . ' %{fugitive#head()}'
+   endif
+
+   let l:s .= '%='
+   if a:current
+      let l:s .= crystalline#left_sep('', 'Fill') . ' %{&paste ?"PASTE ":""}%{&spell?"SPELL ":""}'
+      let l:s .= crystalline#left_mode_sep('')
+   endif
+   if a:width > 80
+      let l:s .= ' %{&ft}[%{&fenc!=#""?&fenc:&enc}][%{&ff}] %l/%L %c%V %P '
+   else
+      let l:s .= ' '
+   endif
+
+   return l:s
+endfunction
+
+function! TabLine()
+   let l:vimlabel = has('nvim') ?  ' NVIM ' : ' VIM '
+   return crystalline#bufferline(2, len(l:vimlabel), 1) . '%=%#CrystallineTab# ' . l:vimlabel
+endfunction
+
+let g:crystalline_enable_sep = 1
+let g:crystalline_statusline_fn = 'StatusLine'
+let g:crystalline_tabline_fn = 'TabLine'
+let g:crystalline_theme = 'gruvbox'
 " }}}
 " }}} Plugin Config
 
@@ -167,6 +207,9 @@ augroup on_vim_resized
   autocmd!
   autocmd vimResized * wincmd =
 augroup END
+
+" always show buffer/tab line
+set showtabline=2
 " }}} User Interface
 
 " File Handling {{{
