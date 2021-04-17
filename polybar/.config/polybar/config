@@ -13,7 +13,7 @@ gray       = #a89984
 
 
 [global/wm]
-margin-top = -8
+margin-top = 0
 margin-bottom = 0
 
 
