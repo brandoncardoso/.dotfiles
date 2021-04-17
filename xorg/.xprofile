@@ -1,0 +1,11 @@
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+
+# xsecurelock config
+export XSECURELOCK_PASSWORD_PROMPT=time
+
+# screen idle lock (600 = 10 mins, 5 = screensaver cycler to reduce burn-in)
+xset s 600 5
+xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- xsecurelock &
