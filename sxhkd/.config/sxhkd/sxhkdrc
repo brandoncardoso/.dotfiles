@@ -23,7 +23,7 @@ super + n
 	~/.config/bspwm/start_scratch.sh;id=$(cat /tmp/scratchid);bspc node $id --flag hidden;bspc node -f $id
 
 # screen lock
-super + l
+super + u
 	xset s activate
 
 
