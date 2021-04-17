@@ -91,6 +91,8 @@ endif
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+let NERDTreeShowHidden=1
 " }}}
 " rbong/vim-crystalline {{{
 function! StatusLine(current, width)
