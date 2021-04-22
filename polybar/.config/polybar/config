@@ -1,7 +1,7 @@
 [colors]
-background = #D8282a36
+background = #d8282a36
 foreground = #f8f8f2
-black      = #44475a
+black      = #d844475a
 gray       = #6272a4
 cyan       = #8be9fd
 green      = #50fa7b
@@ -18,7 +18,7 @@ margin-bottom = 0
 
 
 [settings]
-format-padding = 2
+format-padding = 4
 format-spacing = 2
 
 
@@ -32,17 +32,17 @@ foreground = ${colors.foreground}
 enable-ipc = true
 line-size = 4
 
-modules-left = workspaces title
+modules-left = powermenu workspaces title
 modules-center = spotify spotify-prev spotify-play-pause spotify-next
-modules-right = pulseaudio temperature-cpu temperature-gpu wired-network calendar powermenu
+modules-right = pulseaudio temperature-cpu temperature-gpu wired-network calendar
 
 tray-position = right
 tray-detached = false
-tray-background = ${colors.background}
+tray-background = ${colors.black}
 tray-offset-y = 0
 
-font-0 = Noto Sans CJK JP: style=Regular: pixelsize=12; 2
-font-1 = Noto Sans Mono: Code: style=Regular: pixelsize=13; 2
+font-0 = Noto Sans CJK JP: style=Regular: pixelsize=12; 3
+font-1 = Noto Sans Mono: Code: style=Regular: pixelsize=13; 3
 font-2 = Material Icons: style=Regular: pixelsize=14; 4
 
 
@@ -53,6 +53,8 @@ inline-mode = false
 enable-scroll = false
 
 format-prefix = " "
+format-padding = 2
+format-background = ${colors.black}
 
 label-urgent = %{T2}%name%%{T}
 label-urgent-padding = 4
@@ -70,7 +72,9 @@ label-empty =
 
 [module/title]
 type = internal/xwindow
-label = %title:0:128:...% %{A1:bspc node -c:}  %{A}
+format-suffix = %{A1:bspc node -c:}   %{A}
+format-suffix-foreground = ${colors.gray}
+label = %title:0:128:...%
 label-empty =
 
 
@@ -79,7 +83,7 @@ type = custom/script
 tail = true
 ; prefix symbol is shown before the text
 format-prefix = "%{T3} %{T}"
-format-prefix-foreground = ${colors.green}
+format-prefix-foreground = ${colors.pink}
 format = <label>
 exec = ~/.config/polybar/scripts/spotify_status.sh
 
@@ -123,7 +127,7 @@ interval = 2
 exec = nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits
 label = GPU %output%°C
 label-foreground = ${colors.cyan}
-format-offset = 0
+format-offset = -12
 
 
 [module/pulseaudio]
@@ -166,7 +170,7 @@ label-open-foreground = ${colors.yellow}
 label-close = "%{T3}%{T}"
 label-close-foreground = ${colors.red}
 label-separator = "/"
-label-separator-foreground = ${colors.foreground}
+label-separator-foreground = ${colors.gray}
 
 menu-0-foreground = ${colors.yellow}
 menu-0-0 = "Poweroff"
