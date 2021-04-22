@@ -91,3 +91,5 @@ if ! shopt -oq posix; then
 fi
 
 export PATH="${PATH}:${HOME}/.local/bin/"
+
+eval "$(dircolors ~/.dir_colors/dracula)"

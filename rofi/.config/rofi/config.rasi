@@ -16,7 +16,7 @@ configuration {
 	yoffset: -150;
 /*	xoffset: 0;*/
 
-	theme: "slate";
+	theme: "themes/dracula";
 
 	show-icons: true;
 /*	icon-theme: ;*/

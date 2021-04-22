@@ -1,15 +1,15 @@
 [colors]
-background = #282828
-foreground = #ebdbb2
-black      = #1d2021
-red        = #fb4934
-green      = #b8bb26
-yellow     = #fabd2f
-blue       = #83a598
-purple     = #d3869b
-teal       = #8ec07c
-orange     = #fe8019
-gray       = #a89984
+background = #D8282a36
+foreground = #f8f8f2
+black      = #44475a
+gray       = #6272a4
+cyan       = #8be9fd
+green      = #50fa7b
+orange     = #ffb86c
+pink       = #ff79c6
+purple     = #bd93f9
+red        = #ff5555
+yellow     = #f1fa8c
 
 
 [global/wm]
@@ -18,16 +18,16 @@ margin-bottom = 0
 
 
 [settings]
-format-padding = 4
+format-padding = 2
 format-spacing = 2
 
 
 [bar/bottom]
 wm-restack = bspwm
 bottom = true
-width = 100%:-6
+width = 100%
 height = 36
-background = #00000000
+background = ${colors.background}
 foreground = ${colors.foreground}
 enable-ipc = true
 line-size = 4
@@ -38,12 +38,12 @@ modules-right = pulseaudio temperature-cpu temperature-gpu wired-network calenda
 
 tray-position = right
 tray-detached = false
-tray-background = #00000000
-tray-offset-y = -2
+tray-background = ${colors.background}
+tray-offset-y = 0
 
-font-0 = Noto Sans CJK JP: style=Regular: pixelsize=12; 0
-font-1 = Noto Sans Mono: Code: style=Regular: pixelsize=13; 0
-font-2 = Material Icons: style=Regular: pixelsize=14; 2
+font-0 = Noto Sans CJK JP: style=Regular: pixelsize=12; 2
+font-1 = Noto Sans Mono: Code: style=Regular: pixelsize=13; 2
+font-2 = Material Icons: style=Regular: pixelsize=14; 4
 
 
 [module/workspaces]
@@ -60,7 +60,7 @@ label-urgent-underline = ${colors.yellow}
 
 label-focused = %{T2}%name%%{T}
 label-focused-padding = 4
-label-focused-underline = ${colors.blue}
+label-focused-underline = ${colors.purple}
 
 label-occupied = %{T2}%name%%{T}
 label-occupied-padding = 4
@@ -70,7 +70,7 @@ label-empty =
 
 [module/title]
 type = internal/xwindow
-label = [ %title:0:128:...% ]%{A1:bspc node -c:}  %{A}
+label = %title:0:128:...% %{A1:bspc node -c:}  %{A}
 label-empty =
 
 
@@ -79,6 +79,7 @@ type = custom/script
 tail = true
 ; prefix symbol is shown before the text
 format-prefix = "%{T3} %{T}"
+format-prefix-foreground = ${colors.green}
 format = <label>
 exec = ~/.config/polybar/scripts/spotify_status.sh
 
@@ -110,9 +111,9 @@ type = internal/temperature
 interval = 2
 hwmon-path = ${env:HWMON_PATH}
 label = CPU %temperature-c%
-label-foreground = ${colors.teal}
+label-foreground = ${colors.cyan}
 format-prefix = "%{T3}%{T}"
-format-prefix-foreground = ${colors.teal}
+format-prefix-foreground = ${colors.cyan}
 format-margin = 0
 
 
@@ -121,14 +122,14 @@ type = custom/script
 interval = 2
 exec = nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits
 label = GPU %output%°C
-label-foreground = ${colors.teal}
-format-offset = -16
+label-foreground = ${colors.cyan}
+format-offset = 0
 
 
 [module/pulseaudio]
 type = custom/script
 tail = true
-format-foreground = ${colors.blue}
+format-foreground = ${colors.purple}
 exec = ~/.config/polybar/scripts/polybar-pulseaudio-control/pulseaudio-control.bash --icons-volume ",," --icon-muted "" --format='%{T3}$VOL_ICON%{T} ${VOL_LEVEL}%' listen
 click-left = ~/.config/polybar/scripts/polybar-pulseaudio-control/pulseaudio-control.bash togmute
 click-middle = ~/.config/polybar/scripts/polybar-pulseaudio-control/pulseaudio-control.bash next-sink

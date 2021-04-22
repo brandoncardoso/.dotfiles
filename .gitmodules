@@ -7,3 +7,6 @@
 [submodule "polybar/.config/polybar/scripts/polybar-pulseaudio-control"]
 	path = polybar/.config/polybar/scripts/polybar-pulseaudio-control
 	url = https://github.com/marioortizmanero/polybar-pulseaudio-control.git
+[submodule "gtk/.themes/dracula"]
+	path = gtk/.themes/dracula
+	url = git@github.com:dracula/gtk.git

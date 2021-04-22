@@ -4,7 +4,7 @@ scriptencoding utf-8
 runtime vim-plug/plug.vim
 call plug#begin('~/.config/nvim/plugged')
 " colorscheme
-Plug 'gruvbox-community/gruvbox'
+Plug 'dracula/vim'
 
 " indent line guides
 Plug 'yggdroot/indentline'
@@ -130,13 +130,13 @@ endfunction
 let g:crystalline_enable_sep = 1
 let g:crystalline_statusline_fn = 'StatusLine'
 let g:crystalline_tabline_fn = 'TabLine'
-let g:crystalline_theme = 'gruvbox'
+let g:crystalline_theme = 'dracula'
 " }}}
 " }}} Plugin Config
 
 " User Interface {{{
 " Colors {{{
-silent! colorscheme gruvbox
+silent! colorscheme dracula
 syntax enable
 
 " only highlight first 500 characters
