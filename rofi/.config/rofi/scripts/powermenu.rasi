@@ -1,0 +1,23 @@
+configuration {
+  modi: "";
+
+  width: 4;
+  fixed-num-lines: true;
+  lines: 4;
+  location: 7;
+  yoffset: -36;
+
+  sort: false;
+  hide-scrollbar: true;
+  disable-history: true;
+}
+
+@import "../themes/dracula"
+
+#mainbox { 
+  children: [listview];
+}
+
+#window {
+  border: 0;
+}

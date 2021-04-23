@@ -32,7 +32,7 @@ foreground = ${colors.foreground}
 enable-ipc = true
 line-size = 4
 
-modules-left = powermenu workspaces title
+modules-left = powermenu2 workspaces title
 modules-center = spotify spotify-prev spotify-play-pause spotify-next
 modules-right = pulseaudio temperature-cpu temperature-gpu wired-network calendar
 
@@ -159,6 +159,13 @@ type = custom/script
 exec = ~/.config/polybar/scripts/calendar.sh
 interval = 1
 click-left = ~/.config/polybar/scripts/calendar.sh --popup &
+
+
+[module/powermenu2]
+type = custom/text
+content = "%{T3}%{T}"
+content-foreground = ${colors.yellow}
+click-left = ~/.config/rofi/scripts/powermenu.sh
 
 
 [module/powermenu]
