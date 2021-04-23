@@ -52,7 +52,6 @@ pin-workspaces = true
 inline-mode = false
 enable-scroll = false
 
-format-prefix = " "
 format-padding = 2
 format-background = ${colors.black}
 
