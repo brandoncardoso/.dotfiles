@@ -59,7 +59,7 @@ fi
 if [ "$color_prompt" = yes ]; then
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 	export GIT_PS1_SHOWDIRTYSTATE=1
-    PS1='\[\e[38;5;212m\]\w$(__git_ps1 "\[\e[0m\]  \[\e[38;5;229m\]%s\[\e[0m\]")\[\e[0m\]\$\[\e[0m\] '
+    PS1='\[\e[38;5;159m\]\w$(__git_ps1 "\[\e[0m\]  \[\e[38;5;229m\]%s\[\e[0m\]")\[\e[0m\]\$\[\e[0m\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
