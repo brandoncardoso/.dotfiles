@@ -34,7 +34,7 @@ line-size = 4
 
 modules-left = powermenu workspaces title
 modules-center = spotify spotify-prev spotify-play-pause spotify-next
-modules-right = pulseaudio temperature-cpu temperature-gpu wired-network calendar
+modules-right = pulseaudio temperature-cpu temperature-gpu calendar
 
 tray-position = right
 tray-detached = false
@@ -139,18 +139,6 @@ click-middle = ~/.config/polybar/scripts/polybar-pulseaudio-control/pulseaudio-c
 click-right = exec pavucontrol &
 scroll-up = ~/.config/polybar/scripts/polybar-pulseaudio-control/pulseaudio-control.bash --volume-max 130 --volume-step 5 up
 scroll-down = ~/.config/polybar/scripts/polybar-pulseaudio-control/pulseaudio-control.bash --volume-max 130 --volume-step 5 down
-
-
-[module/wired-network]
-type = internal/network
-interface = enp9s0
-interval = 3.0
-unknown-as-up = true
-format-connected = <label-connected>
-label-connected = %{T3}%{T}
-label-connected-foreground = ${colors.green}
-label-diconnected = %{T3}%{T}
-label-disconnected-foreground = ${colors.red}
 
 
 [module/calendar]
