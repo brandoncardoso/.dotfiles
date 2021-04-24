@@ -10,3 +10,6 @@
 [submodule "gtk/.themes/dracula"]
 	path = gtk/.themes/dracula
 	url = git@github.com:dracula/gtk.git
+[submodule "fcitx/.config/fcitx/skin/fcitx-dracula"]
+	path = fcitx/.config/fcitx/skin/fcitx-dracula
+	url = https://github.com/BrandonCardoso/fcitx-dracula.git
