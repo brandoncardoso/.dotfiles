@@ -13,7 +13,7 @@ menu=(
   [Logout]="bspc quit"
 )
 
-ROFI_OPTIONS=(-config ~/.config/rofi/scripts/powermenu.rasi \
+ROFI_OPTIONS=(-config ~/.config/polybar/scripts/powermenu.rasi \
   -me-select-entry 'MousePrimary' \
   -me-accept-entry 'MouseDPrimary')
 

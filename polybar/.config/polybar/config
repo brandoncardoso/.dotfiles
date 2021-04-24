@@ -164,7 +164,7 @@ click-left = ~/.config/polybar/scripts/calendar.sh --popup &
 type = custom/text
 content = "%{T3}%{T}"
 content-foreground = ${colors.yellow}
-click-left = ~/.config/rofi/scripts/powermenu.sh
+click-left = ~/.config/polybar/scripts/powermenu.sh
 
 
 [module/powermenu]
