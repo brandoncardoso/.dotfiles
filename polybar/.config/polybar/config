@@ -34,7 +34,7 @@ line-size = 4
 
 modules-left = powermenu workspaces title
 modules-center = spotify spotify-prev spotify-play-pause spotify-next
-modules-right = pulseaudio temperature-cpu temperature-gpu calendar
+modules-right = pulseaudio temperature-cpu temperature-gpu updates updates-ipc calendar
 
 tray-position = right
 tray-detached = false
@@ -153,3 +153,16 @@ type = custom/text
 content = "%{T3}%{T}"
 content-foreground = ${colors.yellow}
 click-left = ~/.config/polybar/scripts/powermenu.sh
+
+
+[module/updates-ipc]
+type = custom/ipc
+hook-0 = ~/.config/polybar/scripts/num-updates.sh
+click-left = polybar-msg hook updates-ipc 1
+
+
+[module/updates]
+type = custom/script
+interval = 14400 # 4 hours in seconds
+exec = polybar-msg hook updates-ipc 1
+label =
