@@ -34,7 +34,7 @@ line-size = 4
 
 modules-left = powermenu workspaces title
 modules-center = spotify spotify-prev spotify-play-pause spotify-next
-modules-right = pulseaudio temperature-cpu temperature-gpu updates updates-ipc calendar
+modules-right = updates updates-ipc pulseaudio temperature-cpu temperature-gpu calendar
 
 tray-position = right
 tray-detached = false
