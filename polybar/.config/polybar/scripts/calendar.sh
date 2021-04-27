@@ -5,7 +5,7 @@ YAD_HEIGHT=200 # 193 is minimum possible value
 DATE="$(date +'%a,  %b %e,  %Y    %l:%M:%S %p')"
 
 case "$1" in --popup)
-	yad --calendar --undecorated --fixed --close-on-unfocus --no-buttons --posx=2200 --posy=1190 \
+	yad --calendar --undecorated --fixed --close-on-unfocus --no-buttons --posx=2246 --posy=1190 \
 		--title="Calendar" --borders=0 --width=$YAD_WIDTH --height=$YAD_HEIGHT >/dev/null &
 	;;
 *)
