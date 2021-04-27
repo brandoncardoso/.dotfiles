@@ -51,7 +51,7 @@ bspc config focus_follows_pointer false
 
 # misc
 bspc config split_ratio 0.50
-bspc confic automatic_scheme longest_side
+bspc config automatic_scheme longest_side
 #bspc config auto_alternate true
 #bspc config auto_cancel true
 bspc config initial_polarity second_child
