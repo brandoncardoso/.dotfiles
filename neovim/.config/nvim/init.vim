@@ -46,6 +46,9 @@ Plug 'preservim/nerdtree'
 " status line
 Plug 'rbong/vim-crystalline'
 
+" Show/trim trailing whitespace
+Plug 'ntpeters/vim-better-whitespace'
+
 call plug#end()
 " }}} Plugins
 
@@ -131,6 +134,12 @@ let g:crystalline_enable_sep = 1
 let g:crystalline_statusline_fn = 'StatusLine'
 let g:crystalline_tabline_fn = 'TabLine'
 let g:crystalline_theme = 'dracula'
+" }}}
+" ntpeters/vim-better-whitespace {{{
+let g:strip_whitelines_at_eof=1 " stripe empty lines at end of file
+let g:show_spaces_that_precede_tabs=1 " show spaces before/between tabs
+nnoremap ]w :NextTrailingWhitespace<CR>
+nnoremap [w :PrevTrailingWhitespace<CR>
 " }}}
 " }}} Plugin Config
 
