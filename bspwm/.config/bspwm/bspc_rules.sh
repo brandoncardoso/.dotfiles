@@ -17,5 +17,4 @@ for game in $mygames; do
 done
 
 # scratchpad
-bspc rule -a "Alacritty:scratchpad" sticky=on state=floating hidden=on
-~/.config/bspwm/start_scratch.sh
+bspc rule -a "Alacritty:scratchpad" sticky=on state=floating
