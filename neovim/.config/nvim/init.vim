@@ -105,7 +105,7 @@ function! StatusLine(current, width)
    endif
    let l:s .= ' %f%h%W%m%r '
    if a:current
-      let l:s .= crystalline#right_sep('', 'Fill') . ' %{fugitive#head()}'
+      let l:s .= crystalline#right_sep('', 'Fill') . '  %{fugitive#head()}'
    endif
 
    let l:s .= '%='
@@ -191,7 +191,7 @@ set sidescroll=1
 
 " display incomplete commands
 set showcmd
-set cmdheight=2
+set cmdheight=1
 
 " always show the signcolumn to avoid jitter
 set signcolumn=yes
