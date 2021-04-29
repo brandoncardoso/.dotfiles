@@ -8,6 +8,7 @@ bspc rule -a qBittorrent state=floating desktop=^5
 bspc rule -a Pavucontrol state=floating
 bspc rule -a Org.gnome.Nautilus state=floating
 bspc rule -a Pcmanfm state=floating
+bspc rule -a Zathura state=tiled
 
 steamlib=~/.local/share/Steam    # path to your steamlibrary
 mygames="$(ls $steamlib/steamapps/appmanifest_*.acf | sed 's/[^0-9]*//g')"    # this sed command removes everything but the digits
