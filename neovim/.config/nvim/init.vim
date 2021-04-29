@@ -73,6 +73,14 @@ nmap <silent> gr <Plug>(coc-references)
 " }}}
 " airblade/vim-gitgutter {{{
 let g:gitgutter_override_sign_column_highlight = 1
+set foldtext=gitgutter#fold#foldtext() " show (*) on folds with changes
+nmap ]g <Plug>(GitGutterNextHunk)
+nmap [g <Plug>(GitGutterPrevHunk)
+
+function! GitStatus()
+  let [added,modified,removed] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', added, modified, removed)
+endfunction
 " }}}
 " mbbill/undotree {{{
 nnoremap <F5> :UndotreeToggle<cr>
@@ -108,7 +116,7 @@ function! StatusLine(current, width)
    endif
    let l:s .= ' %f%h%W%m%r '
    if a:current
-      let l:s .= crystalline#right_sep('', 'Fill') . '  %{fugitive#head()}'
+      let l:s .= crystalline#right_sep('', 'Fill') . '  %{fugitive#head()} (%{GitStatus()})'
    endif
 
    let l:s .= '%='
