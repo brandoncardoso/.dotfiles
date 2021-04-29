@@ -24,6 +24,9 @@ Plug 'tpope/vim-fugitive'
 " adjust tab size/style based on filetype and local files
 Plug 'tpope/vim-sleuth'
 
+" unix shell commands
+Plug 'tpope/vim-eunuch'
+
 " shows git line status in vim gutter
 Plug 'airblade/vim-gitgutter'
 
