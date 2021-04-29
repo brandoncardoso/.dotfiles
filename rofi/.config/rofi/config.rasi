@@ -45,7 +45,7 @@ configuration {
 	auto-select: false;
 	disable-history: false;
 /*	ignored-prefixes: "";*/
-	cycle: false;
+	cycle: true;
 	sidebar-mode: false; // show modes at the bottom
 	matching: "fuzzy";
 	tokenize: true;
