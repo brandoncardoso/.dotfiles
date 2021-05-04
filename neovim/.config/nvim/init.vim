@@ -119,7 +119,10 @@ function! StatusLine(current, width)
    endif
    let l:s .= ' %f%h%W%m%r '
    if a:current
-      let l:s .= crystalline#right_sep('', 'Fill') . '  %{fugitive#head()} (%{GitStatus()})'
+      let l:s .= crystalline#right_sep('', 'Fill')
+      if fugitive#head() != ''
+         let l:s .= '  %{fugitive#head()} (%{GitStatus()})'
+      endif
    endif
 
    let l:s .= '%='
