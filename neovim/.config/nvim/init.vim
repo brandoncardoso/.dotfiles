@@ -52,6 +52,9 @@ Plug 'rbong/vim-crystalline'
 " Show/trim trailing whitespace
 Plug 'ntpeters/vim-better-whitespace'
 
+" prettier
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
 call plug#end()
 " }}} Plugins
 
