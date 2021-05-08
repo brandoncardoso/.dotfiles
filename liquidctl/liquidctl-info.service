@@ -1,0 +1,8 @@
+[Unit]
+Description=AIO temp info to file
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=liquidctl status
+StandardOutput=file:/var/log/liquidctl.log
