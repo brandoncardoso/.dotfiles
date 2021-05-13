@@ -34,7 +34,7 @@ line-size = 4
 
 modules-left = powermenu workspaces title
 modules-center = spotify spotify-prev spotify-play-pause spotify-next
-modules-right = updates updates-ipc pulseaudio temperature-cpu temperature-gpu temperature-aio fanspeed-aio calendar
+modules-right = updates updates-ipc pulseaudio temperature-cpu temperature-gpu temperature-aio calendar
 
 tray-position = right
 tray-detached = false
@@ -138,13 +138,13 @@ format-offset = -12
 label = AIO %output%%{T3}℃%{T}
 
 
-[module/fanspeed-aio]
-type = custom/script
-interval = 2
-exec = grep "Fan 1 speed" /var/log/liquidctl.log | grep -P -o "[0-9]+\d"
-format-foreground = ${colors.cyan}
-format-offset = -12
-label = %output% rpm
+#[module/fanspeed-aio]
+#type = custom/script
+#interval = 2
+#exec = grep "Fan 1 speed" /var/log/liquidctl.log | grep -P -o "[0-9]+\d"
+#format-foreground = ${colors.cyan}
+#format-offset = -12
+#label = %output% rpm
 
 
 [module/pulseaudio]
