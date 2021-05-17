@@ -32,9 +32,8 @@ foreground = ${colors.foreground}
 enable-ipc = true
 line-size = 4
 
-modules-left = powermenu workspaces
-modules-center = title
-#spotify spotify-prev spotify-play-pause spotify-next
+modules-left = powermenu workspaces title
+#modules-center = spotify spotify-prev spotify-play-pause spotify-next
 modules-right = updates updates-ipc pulseaudio temperature-cpu temperature-gpu temperature-aio calendar
 
 tray-position = right
