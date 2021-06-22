@@ -94,3 +94,7 @@ fi
 export PATH="${PATH}:${HOME}/.local/bin/"
 
 eval "$(dircolors ~/.dir_colors/dracula)"
+
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  tmux attach || tmux new
+fi
