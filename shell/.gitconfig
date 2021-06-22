@@ -1,0 +1,64 @@
+[user]
+	useConfigOnly = true
+	name = Brandon Cardoso
+
+[core]
+	editor = nvim
+
+[color]
+	ui = true
+
+[color "diff"]
+	meta = cyan
+	frag = magenta bold
+	whitespace = red
+
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = red
+	branch = cyan
+
+[commit]
+	verbose = true
+
+[diff]
+	algorithm = histogram
+
+[pull]
+	; fast-forward only
+	ff = only
+	rebase = true
+
+[merge]
+	conflictstyle = diff3
+	prompt = true
+
+[rerere]
+	; recording of resolved conflicts
+	enabled = true
+
+[stash]
+	showPatch = true
+
+[push]
+	default = simple
+
+[log]
+	decorate = full
+
+[status]
+	submoduleSummary = true
+
+[alias]
+	a = add
+	ap = add -p
+	c = commit
+	co = checkout
+	cp = cherry-pick
+	l = log --all --graph
+	rb = rebase
+	rs = restore
+	st = status
+	whoami = !git config --get user.name && git config --get user.email
+
