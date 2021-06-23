@@ -53,12 +53,32 @@
 [alias]
 	a = add
 	ap = add -p
-	c = commit
-	co = checkout
+	b = branch
+	co = commit
+	com = commit -m
+	ch = checkout
+	chb = checkout -b
 	cp = cherry-pick
-	l = log --all --graph
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+	cps = cherry-pick --skip
+	d = diff
+	ds = diff --staged
+	i = init
+	l = log --graph
+	la = log --graph --all
+	m = merge
+	pl = pull
+	ps = push
+	psu = push -u
 	rb = rebase
+	re = reset
+	res = reset --soft
+	reh = reset --hard
 	rs = restore
+	rv = revert
+	sh = stash
+	sha = stash apply
 	st = status
 	whoami = !git config --get user.name && git config --get user.email
 
