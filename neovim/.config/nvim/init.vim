@@ -191,6 +191,7 @@ set foldopen+=jump
 filetype plugin indent on
 " don't redraw while executing macros/etc
 set lazyredraw
+set redrawtime=3000
 
 " maintain indent level when wrapping
 if exists('+breakindent')
