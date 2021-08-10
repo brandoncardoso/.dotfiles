@@ -55,10 +55,12 @@
 	ap = add -p
 	b = branch
 	co = commit
+	coa = commit --amend
 	com = commit -m
 	ch = checkout
 	chb = checkout -b
-	cp = cherry-pick
+	cl = clone
+	cp = cherry-pick -x
 	cpa = cherry-pick --abort
 	cpc = cherry-pick --continue
 	cps = cherry-pick --skip
@@ -75,6 +77,7 @@
 	re = reset
 	res = reset --soft
 	reh = reset --hard
+	reh1 = reset --hard HEAD~1
 	rs = restore
 	rv = revert
 	sh = stash
