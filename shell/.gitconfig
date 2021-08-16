@@ -54,12 +54,14 @@
 	a = add
 	ap = add -p
 	b = branch
-	co = commit
-	coa = commit --amend
-	com = commit -m
+	cf = config
+	cfg = config --global
 	ch = checkout
 	chb = checkout -b
 	cl = clone
+	co = commit
+	coa = commit --amend
+	com = commit -m
 	cp = cherry-pick -x
 	cpa = cherry-pick --abort
 	cpc = cherry-pick --continue
@@ -75,13 +77,12 @@
 	psu = push -u
 	rb = rebase
 	re = reset
-	res = reset --soft
 	reh = reset --hard
 	reh1 = reset --hard HEAD~1
+	res = reset --soft
 	rs = restore
 	rv = revert
 	sh = stash
 	sha = stash apply
 	st = status
 	whoami = !git config --get user.name && git config --get user.email
-
