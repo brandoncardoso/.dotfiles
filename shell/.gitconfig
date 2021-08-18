@@ -84,5 +84,9 @@
 	rv = revert
 	sh = stash
 	sha = stash apply
+	sm = submodule
+	sma = submodule add
+	smd = submodule deinit
+	smu = submodule update --remote --merge
 	st = status
 	whoami = !git config --get user.name && git config --get user.email
