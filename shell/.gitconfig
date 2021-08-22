@@ -72,6 +72,7 @@
 	l = log --graph
 	la = log --graph --all
 	m = merge
+	ms = merge --squash
 	pl = pull
 	ps = push
 	psu = push -u
