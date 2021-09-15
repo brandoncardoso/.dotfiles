@@ -62,7 +62,7 @@
 	co = commit
 	coa = commit --amend
 	com = commit -m
-	cp = cherry-pick -x
+	cp = cherry-pick
 	cpa = cherry-pick --abort
 	cpc = cherry-pick --continue
 	cps = cherry-pick --skip
@@ -82,6 +82,7 @@
 	reh1 = reset --hard HEAD~1
 	res = reset --soft
 	rs = restore
+	rss = restore --staged
 	rv = revert
 	sh = stash
 	sha = stash apply
