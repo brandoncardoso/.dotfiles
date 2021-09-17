@@ -42,7 +42,7 @@
 	showPatch = true
 
 [push]
-	default = simple
+	default = current
 
 [log]
 	decorate = full
@@ -76,6 +76,7 @@
 	pl = pull
 	ps = push
 	psu = push -u
+	psuo = push -u origin
 	rb = rebase
 	re = reset
 	reh = reset --hard
