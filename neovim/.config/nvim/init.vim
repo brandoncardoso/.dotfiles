@@ -65,7 +65,7 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " }}}
 " junegunn/fzf {{{
 nnoremap <Leader>ff :Files<cr>
-nnoremap <Leader>bb :Buffers<cr>
+nnoremap <Leader>fb :Buffers<cr>
 " }}}
 " neoclide/coc.nvim {{{
 " alt+space to trigger completion
