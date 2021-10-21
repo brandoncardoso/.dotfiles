@@ -162,16 +162,14 @@ nnoremap [w :PrevTrailingWhitespace<CR>
 
 " User Interface {{{
 " Colors {{{
+
 silent! colorscheme dracula
+set background=dark
+
 syntax enable
 
 " only highlight first 500 characters
 set synmaxcol=500
-
-set termguicolors
-" transparent background
-highlight Normal guibg=NONE ctermbg=NONE
-highlight LineNr guibg=NONE ctermbg=NONE
 " }}} Colors
 
 " Folds {{{
