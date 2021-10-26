@@ -45,7 +45,9 @@ Plug 'godlygeek/tabular'
 Plug 'mbbill/undotree'
 
 " file system explorer
-Plug 'preservim/nerdtree'
+"Plug 'preservim/nerdtree'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 
 " status line
 Plug 'rbong/vim-crystalline'
@@ -106,11 +108,31 @@ if has("persistent_undo")
 endif
 " }}}
 " preservim/nerdtree {{{
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+"nnoremap <C-n> :NERDTree<CR>
+"nnoremap <C-t> :NERDTreeToggle<CR>
+"nnoremap <C-f> :NERDTreeFind<CR>
 
-let NERDTreeShowHidden=1
+"let NERDTreeShowHidden=1
+" }}}
+
+" kyazdani42/nvim-tree.lua {{{
+lua << EOF
+require'nvim-tree'.setup{
+  disable_netrw = true,
+  auto_close = false,
+}
+EOF
+
+let g:nvim_tree_ignore = ['.git', 'node_modules']
+let g:nvim_tree_gitignore = 1
+let g:nvim_tree_highlight_opened_files = 1
+
+nnoremap <C-f> :NvimTreeToggle<CR>
+nnoremap <leader>r :NvimTreeRefresh<CR>
+nnoremap <leader>f :NvimTreeFindFilogglee<CR>
+
+highlight NvimTreeFolderIcon guibg=blue
+" }}}
 " }}}
 " rbong/vim-crystalline {{{
 function! StatusLine(current, width)
@@ -163,7 +185,7 @@ nnoremap [w :PrevTrailingWhitespace<CR>
 
 " User Interface {{{
 " Colors {{{
-
+set termguicolors
 silent! colorscheme dracula
 set background=dark
 
