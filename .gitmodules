@@ -14,3 +14,6 @@
 	path = fcitx/.config/fcitx/skin/fcitx-dracula
 	url = https://github.com/BrandonCardoso/fcitx-dracula.git
 	branch = main
+[submodule "alacritty/.config/alacritty/colors/dracula"]
+	path = alacritty/.config/alacritty/colors/dracula
+	url = git@github.com:dracula/alacritty.git
