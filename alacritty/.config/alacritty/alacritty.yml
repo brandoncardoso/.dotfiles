@@ -106,7 +106,7 @@ scrolling:
 
 # Font configuration
 font:
-  size: 10
+  size: 12
 
   # Normal (roman) font face
   normal:
