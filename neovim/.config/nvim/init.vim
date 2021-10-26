@@ -62,6 +62,45 @@ Plug 'akinsho/bufferline.nvim'
 call plug#end()
 " }}} Plugins
 
+" Binds {{{
+let mapleader=","
+
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
+" Map jj and jk to <ESC> to leave insert mode quickly
+inoremap jj <ESC>
+inoremap jk <ESC>
+
+" CTRL-U for undo in insert mode
+inoremap <C-U> <C-G>u<C-U>
+
+" Use | and _ to split windows (while preserving original behaviour of
+" [count]bar and [count]_).
+" Stolen from http://howivim.com/2016/andy-stewart/
+nnoremap <expr><silent> <Bar> v:count == 0 ? "<C-W>v<C-W><Right>" : ":<C-U>normal! 0".v:count."<Bar><CR>"
+nnoremap <expr><silent> _     v:count == 0 ? "<C-W>s<C-W><Down>"  : ":<C-U>normal! ".v:count."_<CR>"
+
+map <leader>ss :setlocal spell!<cr>
+set spelllang=en_ca
+map <F2> :set list! list?<cr>
+
+"Unbind arrow keys
+for prefix in ['i','n','v']
+	for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+		exe prefix . "noremap " . key . " <Nop>"
+	endfor
+endfor
+
+" unhilight search results
+nnoremap <leader>n :noh<CR>
+
+"Easy split navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+" }}} Binds
+
 " Plugin Config {{{
 " nvim-telescope/telescope.nvim {{{
 lua << EOF
@@ -80,14 +119,14 @@ require('telescope').setup {
         ["<esc>"] = actions.close
       },
     },
-  }
+  },
 }
 EOF
 
-nnoremap <leader>ff <cmd>lua project_files()<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>ff <cmd>lua project_files()<CR>
+nnoremap <leader>fg <cmd>Telescope live_grep<CR>
+nnoremap <leader>fb <cmd>Telescope buffers<CR>
+nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 " }}}
 
 " neoclide/coc.nvim {{{
@@ -114,7 +153,7 @@ endfunction
 " }}}
 
 " mbbill/undotree {{{
-nnoremap <F5> :UndotreeToggle<cr>
+nnoremap <F5> :UndotreeToggle<CR>
 
 if has("persistent_undo")
    let target_path = expand('~/.config/nvim/undo')
@@ -144,7 +183,7 @@ let g:nvim_tree_highlight_opened_files = 1
 
 nnoremap <C-f> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>f :NvimTreeFindFilogglee<CR>
+nnoremap <leader>f :NvimTreeFindFile<CR>
 
 highlight NvimTreeFolderIcon guibg=blue
 " }}}
@@ -389,48 +428,9 @@ set gdefault
 set ignorecase
 set smartcase
 
-" <leader>h starts a find a replace for word under cursor
+" <leader>h starts a find & replace for word under cursor
 nnoremap <leader>h :%s/\<<C-R><C-W>\>/<C-R><C-W>/g<Left><Left>
 " }}} Searching
-
-" Binds {{{
-let mapleader=","
-
-nnoremap <leader>sv :source $MYVIMRC<CR>
-
-" Map jj and jk to <ESC> to leave insert mode quickly
-inoremap jj <ESC>
-inoremap jk <ESC>
-
-" CTRL-U for undo in insert mode
-inoremap <C-U> <C-G>u<C-U>
-
-" Use | and _ to split windows (while preserving original behaviour of
-" [count]bar and [count]_).
-" Stolen from http://howivim.com/2016/andy-stewart/
-nnoremap <expr><silent> <Bar> v:count == 0 ? "<C-W>v<C-W><Right>" : ":<C-U>normal! 0".v:count."<Bar><CR>"
-nnoremap <expr><silent> _     v:count == 0 ? "<C-W>s<C-W><Down>"  : ":<C-U>normal! ".v:count."_<CR>"
-
-map <leader>ss :setlocal spell!<cr>
-set spelllang=en_ca
-map <F2> :set list! list?<cr>
-
-"Unbind arrow keys
-for prefix in ['i','n','v']
-	for key in ['<Up>', '<Down>', '<Left>', '<Right>']
-		exe prefix . "noremap " . key . " <Nop>"
-	endfor
-endfor
-
-" unhilight search results
-nnoremap <leader>n :noh<cr>
-
-"Easy split navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-" }}} Binds
 
 " Filetype Configs {{{
 augroup filetype_tweaks
