@@ -7,7 +7,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'dracula/vim'
 
 " indent line guides
-"Plug 'yggdroot/indentline'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 " autocomplete
@@ -35,8 +34,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
 
 " fuzzy finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " aligning text :Tabularize
 Plug 'godlygeek/tabular'
@@ -45,7 +44,6 @@ Plug 'godlygeek/tabular'
 Plug 'mbbill/undotree'
 
 " file system explorer
-"Plug 'preservim/nerdtree'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 
@@ -65,14 +63,33 @@ call plug#end()
 " }}} Plugins
 
 " Plugin Config {{{
-" yggdroot/indentline {{{
-" set indent char for each level
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" nvim-telescope/telescope.nvim {{{
+lua << EOF
+local actions = require('telescope.actions')
+
+project_files = function()
+  local opts = {} -- define here if you want to define something
+  local ok = pcall(require'telescope.builtin'.git_files, opts)
+  if not ok then require'telescope.builtin'.find_files(opts) end
+end
+
+require('telescope').setup {
+  defaults = {
+    mappings = {
+      i = {
+        ["<esc>"] = actions.close
+      },
+    },
+  }
+}
+EOF
+
+nnoremap <leader>ff <cmd>lua project_files()<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " }}}
-" junegunn/fzf {{{
-nnoremap <Leader>ff :Files<cr>
-nnoremap <Leader>fb :Buffers<cr>
-" }}}
+
 " neoclide/coc.nvim {{{
 " alt+space to trigger completion
 inoremap <silent><expr> <M-space> coc#refresh()
@@ -83,6 +100,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 " }}}
+
 " airblade/vim-gitgutter {{{
 let g:gitgutter_override_sign_column_highlight = 1
 set foldtext=gitgutter#fold#foldtext() " show (*) on folds with changes
@@ -94,6 +112,7 @@ function! GitStatus()
   return printf('+%d ~%d -%d', added, modified, removed)
 endfunction
 " }}}
+
 " mbbill/undotree {{{
 nnoremap <F5> :UndotreeToggle<cr>
 
@@ -109,13 +128,6 @@ if has("persistent_undo")
     let &undodir=target_path
     set undofile
 endif
-" }}}
-" preservim/nerdtree {{{
-"nnoremap <C-n> :NERDTree<CR>
-"nnoremap <C-t> :NERDTreeToggle<CR>
-"nnoremap <C-f> :NERDTreeFind<CR>
-
-"let NERDTreeShowHidden=1
 " }}}
 
 " kyazdani42/nvim-tree.lua {{{
@@ -136,6 +148,7 @@ nnoremap <leader>f :NvimTreeFindFilogglee<CR>
 
 highlight NvimTreeFolderIcon guibg=blue
 " }}}
+
 " akinsho/bufferline.nvim {{{
 lua << EOF
 require('bufferline').setup{
@@ -157,6 +170,7 @@ EOF
 
 nnoremap <silent> gb :BufferLinePick<CR>
 " }}}
+
 " rbong/vim-crystalline {{{
 function! StatusLine(current, width)
    let l:s = ''
@@ -198,6 +212,7 @@ let g:crystalline_statusline_fn = 'StatusLine'
 "let g:crystalline_tabline_fn = 'TabLine'
 let g:crystalline_theme = 'dracula'
 " }}}
+
 " ntpeters/vim-better-whitespace {{{
 let g:strip_whitelines_at_eof=1 " stripe empty lines at end of file
 let g:show_spaces_that_precede_tabs=1 " show spaces before/between tabs
@@ -355,7 +370,6 @@ set whichwrap+=hl
 " Soft wrap, with indicator
 set wrap
 set showbreak=«
-
 
 " WSL clipboard support
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
