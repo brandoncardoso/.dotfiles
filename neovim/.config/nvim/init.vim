@@ -58,6 +58,9 @@ Plug 'ntpeters/vim-better-whitespace'
 " prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
+" better buffer display
+Plug 'akinsho/bufferline.nvim'
+
 call plug#end()
 " }}} Plugins
 
@@ -133,6 +136,26 @@ nnoremap <leader>f :NvimTreeFindFilogglee<CR>
 
 highlight NvimTreeFolderIcon guibg=blue
 " }}}
+" akinsho/bufferline.nvim {{{
+lua << EOF
+require('bufferline').setup{
+  options = {
+    always_show_bufferline = true,
+    diagnostics = "coc",
+    diagnostics_update_in_insert = false,
+    diagnostics_indicator = function(count, level, diagnostics_dict, context)
+      return "("..count..")"
+    end,
+    numbers = function(opts) return string.format('%s ', opts.id) end,
+    offsets = {{ filetype = "NvimTree", text = "Files", text_align = "left" }},
+    separator_style = 'thick',
+    show_buffer_close_icons = false,
+    show_close_icon = false,
+  }
+}
+EOF
+
+nnoremap <silent> gb :BufferLinePick<CR>
 " }}}
 " rbong/vim-crystalline {{{
 function! StatusLine(current, width)
@@ -172,7 +195,7 @@ endfunction
 
 let g:crystalline_enable_sep = 1
 let g:crystalline_statusline_fn = 'StatusLine'
-let g:crystalline_tabline_fn = 'TabLine'
+"let g:crystalline_tabline_fn = 'TabLine'
 let g:crystalline_theme = 'dracula'
 " }}}
 " ntpeters/vim-better-whitespace {{{
@@ -259,7 +282,7 @@ augroup on_vim_resized
 augroup END
 
 " always show buffer/tab line
-set showtabline=2
+"set showtabline=2
 " }}} User Interface
 
 " File Handling {{{
