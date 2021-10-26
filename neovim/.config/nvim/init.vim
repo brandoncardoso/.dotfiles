@@ -7,7 +7,8 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'dracula/vim'
 
 " indent line guides
-Plug 'yggdroot/indentline'
+"Plug 'yggdroot/indentline'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
