@@ -7,9 +7,6 @@
 [submodule "polybar/.config/polybar/scripts/polybar-pulseaudio-control"]
 	path = polybar/.config/polybar/scripts/polybar-pulseaudio-control
 	url = https://github.com/marioortizmanero/polybar-pulseaudio-control.git
-[submodule "gtk/.themes/dracula"]
-	path = gtk/.themes/dracula
-	url = git@github.com:dracula/gtk.git
 [submodule "fcitx/.config/fcitx/skin/fcitx-dracula"]
 	path = fcitx/.config/fcitx/skin/fcitx-dracula
 	url = https://github.com/BrandonCardoso/fcitx-dracula.git
