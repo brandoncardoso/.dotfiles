@@ -78,6 +78,8 @@
 	psu = push -u
 	psuo = push -u origin
 	rb = rebase
+	rbc = rebase --continue
+	rbi = rebase --interactive
 	re = reset
 	reh = reset --hard
 	reh1 = reset --hard HEAD~1
