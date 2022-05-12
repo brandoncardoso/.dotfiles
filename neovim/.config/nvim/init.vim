@@ -222,8 +222,8 @@ function! StatusLine(current, width)
    let l:s .= ' %f%h%W%m%r '
    if a:current
       let l:s .= crystalline#right_sep('', 'Fill')
-      if fugitive#head() != ''
-         let l:s .= '  %{fugitive#head()} (%{GitStatus()})'
+      if FugitiveHead() != ''
+         let l:s .= '  %{FugitiveHead()} (%{GitStatus()})'
       endif
    endif
 
