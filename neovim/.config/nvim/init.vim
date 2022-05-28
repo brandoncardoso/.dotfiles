@@ -173,13 +173,23 @@ endif
 lua << EOF
 require'nvim-tree'.setup{
   disable_netrw = true,
-  auto_close = false,
+  update_cwd = true,
+  filters = {
+    custom = {
+      '.git',
+      'node_modules'
+    }
+  },
+  update_focused_file = {
+    enable = true,
+    update_cwd = true
+  }
 }
 EOF
 
-let g:nvim_tree_ignore = ['.git', 'node_modules']
-let g:nvim_tree_gitignore = 1
+let g:nvim_tree_respect_buf_cwd = 1
 let g:nvim_tree_highlight_opened_files = 1
+let g:nvim_tree_add_trailing = 1
 
 nnoremap <C-f> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
