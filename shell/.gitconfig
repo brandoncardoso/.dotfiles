@@ -57,6 +57,9 @@
 	a = add
 	ap = add -p
 	b = branch
+	bd = branch --delete
+	bl = branch --all --list --verbose
+	bm = branch --move
 	cf = config
 	cfg = config --global
 	ch = checkout
