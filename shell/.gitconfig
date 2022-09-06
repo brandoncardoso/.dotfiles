@@ -55,7 +55,7 @@
 
 [alias]
 	a = add
-	ap = add -p
+	ap = add --patch
 	b = branch
 	bd = branch --delete
 	bl = branch --all --list --verbose
@@ -81,8 +81,8 @@
 	ms = merge --squash
 	pl = pull
 	ps = push
-	psu = push -u
-	psuo = push -u origin
+	psu = push --set-upstream
+	psuo = push --set-upstream origin
 	rb = rebase
 	rbc = rebase --continue
 	rbi = rebase --interactive
