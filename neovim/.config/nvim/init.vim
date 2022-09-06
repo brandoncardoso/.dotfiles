@@ -392,11 +392,11 @@ set shiftround
 set completeopt=longest,menuone,noinsert,noselect
 
 " Enable tab navigation between completion items
-inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(2) : "\<Tab>"
+inoremap <silent><expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(2) : "\<S-Tab>"
 
 " Enter to confirm completion item
-inoremap <silent><expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 " }}} Completion
 
 " don't continue comments when using o/O
