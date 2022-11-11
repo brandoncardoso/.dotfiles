@@ -53,13 +53,20 @@
 [status]
 	submoduleSummary = true
 
+[blame]
+	coloring = repeatedLines
+	date = short
+	markUnblameableLines = true
+	markIgnoredLines = true
+
 [alias]
 	a = add
 	ap = add --patch
-	b = branch
-	bd = branch --delete
-	bl = branch --all --list --verbose
-	bm = branch --move
+	br = branch
+	brd = branch --delete
+	brl = branch --all --list --verbose
+	brm = branch --move
+	bl = blame
 	cf = config
 	cfg = config --global
 	ch = checkout
