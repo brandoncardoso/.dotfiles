@@ -44,8 +44,8 @@ Plug 'godlygeek/tabular'
 Plug 'mbbill/undotree'
 
 " file system explorer
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
 
 " status line
 Plug 'rbong/vim-crystalline'
@@ -169,27 +169,25 @@ if has("persistent_undo")
 endif
 " }}}
 
-" kyazdani42/nvim-tree.lua {{{
+" nvim-tree/nvim-tree.lua {{{
 lua << EOF
 require'nvim-tree'.setup{
   disable_netrw = true,
-  update_cwd = true,
+  update_cwd = false,
+  respect_buf_cwd = false,
   filters = {
-    custom = {
-      '.git',
-      'node_modules'
-    }
+    custom = { 'node_modules', '.git/' },
   },
   update_focused_file = {
     enable = true,
-    update_cwd = true
-  }
+    update_cwd = false
+  },
+  renderer = {
+    add_trailing = true,
+    highlight_opened_files = 'all',
+  },
 }
 EOF
-
-let g:nvim_tree_respect_buf_cwd = 1
-let g:nvim_tree_highlight_opened_files = 1
-let g:nvim_tree_add_trailing = 1
 
 nnoremap <C-f> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
