@@ -33,10 +33,6 @@ Plug 'airblade/vim-gitgutter'
 " syntax highlighting for a lot of languages
 Plug 'sheerun/vim-polyglot'
 
-" fuzzy finder
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-
 " aligning text :Tabularize
 Plug 'godlygeek/tabular'
 
@@ -102,33 +98,7 @@ nnoremap <C-l> <C-w>l
 " }}} Binds
 
 " Plugin Config {{{
-" nvim-telescope/telescope.nvim {{{
-lua << EOF
-local actions = require('telescope.actions')
-
-project_files = function()
-  local opts = {} -- define here if you want to define something
-  local ok = pcall(require'telescope.builtin'.git_files, opts)
-  if not ok then require'telescope.builtin'.find_files(opts) end
-end
-
-require('telescope').setup {
-  defaults = {
-    mappings = {
-      i = {
-        ["<esc>"] = actions.close
-      },
-    },
-  },
-}
-EOF
-
-nnoremap <leader>ff <cmd>lua project_files()<CR>
-nnoremap <leader>fg <cmd>Telescope live_grep<CR>
-nnoremap <leader>fb <cmd>Telescope buffers<CR>
-nnoremap <leader>fh <cmd>Telescope help_tags<CR>
-" }}}
-
+"
 " neoclide/coc.nvim {{{
 " alt+space to trigger completion
 inoremap <silent><expr> <M-space> coc#refresh()
@@ -206,7 +176,7 @@ nnoremap <C-f> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>f :NvimTreeFindFile<CR>
 
-highlight NvimTreeFolderIcon guibg=blue
+"highlight NvimTreeFolderIcon guibg=blue
 " }}}
 
 " akinsho/bufferline.nvim {{{
