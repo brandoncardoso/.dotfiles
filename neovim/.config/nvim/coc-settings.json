@@ -1,5 +1,6 @@
 {
   "tsserver.log": "off",
   "tsserver.trace.server": "off",
-  "diagnostic.checkCurrentLine": true
+  "diagnostic.checkCurrentLine": true,
+  "diagnostics.displayByAle": true
 }

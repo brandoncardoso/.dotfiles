@@ -55,6 +55,12 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " better buffer display
 Plug 'akinsho/bufferline.nvim'
 
+" linting
+Plug 'dense-analysis/ale'
+
+" editorconfig
+Plug 'gpanders/editorconfig.nvim'
+
 call plug#end()
 " }}} Plugins
 
@@ -98,7 +104,7 @@ nnoremap <C-l> <C-w>l
 " }}} Binds
 
 " Plugin Config {{{
-"
+
 " neoclide/coc.nvim {{{
 " alt+space to trigger completion
 inoremap <silent><expr> <M-space> coc#refresh()
@@ -121,6 +127,13 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+" }}}
+
+" dense-analysis/ale {{{
+let g:ale_disable_lsp = 1 " for using with CoC
+
+let g:ale_fixers = ['eslint']
+let g:ale_fix_on_save = 1
 " }}}
 
 " airblade/vim-gitgutter {{{
