@@ -180,6 +180,9 @@ require'nvim-tree'.setup{
     add_trailing = true,
     highlight_opened_files = 'all',
   },
+  view = {
+    adaptive_size = true
+  }
 }
 EOF
 
