@@ -286,6 +286,7 @@ set redrawtime=3000
 " maintain indent level when wrapping
 if exists('+breakindent')
   set breakindent
+  set breakindentopt=sbr
 endif
 
 set number
@@ -302,8 +303,8 @@ set noerrorbells
 set visualbell t_vb=
 
 " set lines in view at edges of screen
-set scrolloff=5
-set sidescrolloff=5
+set scrolloff=999 " keep current line centered
+set sidescrolloff=10
 set sidescroll=1
 
 " display incomplete commands
