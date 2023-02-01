@@ -25,7 +25,12 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias nv='nvim'
 alias g='git'
-alias o='xdg-open'
+
+if grep -qi microsoft /proc/version; then
+    alias o='powershell.exe -c'
+else
+    alias o='xdg-open'
+fi
 
 # too much vim
 alias :q='exit'
