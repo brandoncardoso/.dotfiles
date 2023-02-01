@@ -74,7 +74,7 @@
 	cl = clone
 	co = commit
 	coa = commit --amend
-	com = commit -m
+	com = commit --message
 	cp = cherry-pick
 	cpa = cherry-pick --abort
 	cpc = cherry-pick --continue
