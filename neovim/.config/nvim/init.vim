@@ -130,7 +130,10 @@ nmap <silent> gr <Plug>(coc-references)
 " dense-analysis/ale {{{
 let g:ale_disable_lsp = 1 " for using with CoC
 
-let g:ale_fixers = ['eslint']
+let g:ale_fixers = {
+      \"javascript": ['eslint', 'prettier'],
+      \"typescript": ['eslint'],
+      \}
 let g:ale_fix_on_save = 1
 " }}}
 
