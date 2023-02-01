@@ -74,10 +74,14 @@ alacritty|xterm*|rxvt*)
     ;;
 esac
 
-
-# Alias definitions.
+# alias definitions
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+# local/private bashrc
+if [ -f ~/.bashrc_private ]; then
+    . ~/.bashrc_private
 fi
 
 # enable programmable completion features (you don't need to enable
