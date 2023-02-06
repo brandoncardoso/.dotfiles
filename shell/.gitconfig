@@ -62,11 +62,11 @@
 [alias]
 	a = add
 	ap = add --patch
+	bl = blame
 	br = branch
 	brd = branch --delete
 	brl = branch --all --list --verbose
 	brm = branch --move
-	bl = blame
 	cf = config
 	cfg = config --global
 	ch = checkout
@@ -100,13 +100,13 @@
 	rs = restore
 	rss = restore --staged
 	rv = revert
-	sh = stash
-	sha = stash apply
+	sh = stash push
 	shc = stash clear
 	shd = stash drop
 	shl = stash list
+	shm = stash push --message
 	shp = stash pop
-	shs = stash save
+	shu = stash push --include-untracked
 	sm = submodule
 	sma = submodule add
 	smd = submodule deinit
