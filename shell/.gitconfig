@@ -88,6 +88,7 @@
 	ms = merge --squash
 	pl = pull
 	ps = push
+	pst = push --tags
 	psu = push --set-upstream
 	psuo = push --set-upstream origin
 	rb = rebase
@@ -112,4 +113,8 @@
 	smd = submodule deinit
 	smu = submodule update --remote --merge
 	st = status
+	t = tag
+	tm = tag --message
+	td = tag --delete
+	tl = tag --list
 	whoami = !git config --get user.name && git config --get user.email
