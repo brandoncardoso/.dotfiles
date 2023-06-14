@@ -16,7 +16,3 @@ Use `stow -v <folder>` to create symlinks to the configuration files in `<folder
 
 `stow -v --simulate <folder>` to preview the changes before applying.
 
-
-## Preview
-As of 2021-04-21
-![preview of desktop with configurations applied](./preview.png)
