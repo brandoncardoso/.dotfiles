@@ -219,44 +219,35 @@ nnoremap <silent> gb :BufferLinePick<CR>
 " }}}
 
 " rbong/vim-crystalline {{{
-function! StatusLine(current, width)
+function! g:CrystallineStatuslineFn(current)
    let l:s = ''
 
    if a:current
-      let l:s .= crystalline#mode() . crystalline#right_mode_sep('')
+      let l:s .= crystalline#ModeSection(0, 'A', 'B')
    else
       let l:s .= '%#CrystallineInactive#'
    endif
-   let l:s .= ' %f%h%W%m%r '
-   if a:current
-      let l:s .= crystalline#right_sep('', 'Fill')
-      if FugitiveHead() != ''
-         let l:s .= '  %{FugitiveHead()} (%{GitStatus()})'
-      endif
+   let l:s .= ' %f%h%W%m%r ' . crystalline#Sep(0, 'B', 'Fill')
+   if a:current && FugitiveHead() != ''
+      let l:s .= '  %{FugitiveHead()} (%{GitStatus()})'
    endif
 
+   "right side"
    let l:s .= '%='
+
    if a:current
-      let l:s .= crystalline#left_sep('', 'Fill') . ' %{&paste ?"PASTE ":""}%{&spell?"SPELL ":""}'
-      let l:s .= crystalline#left_mode_sep('')
+      let l:s .= crystalline#Sep(1, 'Fill', 'A') . ' %{&paste ?"PASTE ":""}%{&spell?"SPELL ":""}'
+      let l:s .= crystalline#Sep(1, 'A', 'B')
    endif
-   if a:width > 80
-      let l:s .= ' %{&ft}[%{&fenc!=#""?&fenc:&enc}][%{&ff}] %l/%L %c%V %P '
-   else
-      let l:s .= ' '
+
+   if &columns > 80
+      let l:s .= ' %{&ft}[%{&fenc!=#""?&fenc:&enc}][%{&ff}] %l/%L %c%V '
    endif
 
    return l:s
 endfunction
 
-function! TabLine()
-   let l:vimlabel = has('nvim') ?  ' NVIM ' : ' VIM '
-   return crystalline#bufferline(2, len(l:vimlabel), 1) . '%=%#CrystallineTab# ' . l:vimlabel
-endfunction
-
 let g:crystalline_enable_sep = 1
-let g:crystalline_statusline_fn = 'StatusLine'
-"let g:crystalline_tabline_fn = 'TabLine'
 let g:crystalline_theme = 'dracula'
 " }}}
 
