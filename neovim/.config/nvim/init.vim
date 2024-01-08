@@ -4,7 +4,7 @@ scriptencoding utf-8
 runtime vim-plug/plug.vim
 call plug#begin('~/.config/nvim/plugged')
 " colorscheme
-Plug 'dracula/vim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 " indent line guides
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -248,7 +248,7 @@ function! g:CrystallineStatuslineFn(current)
 endfunction
 
 let g:crystalline_enable_sep = 1
-let g:crystalline_theme = 'dracula'
+let g:crystalline_theme = 'hybrid'
 " }}}
 
 " }}} Plugin Config
@@ -256,8 +256,8 @@ let g:crystalline_theme = 'dracula'
 " User Interface {{{
 " Colors {{{
 set termguicolors
-silent! colorscheme dracula
-set background=dark
+silent! colorscheme catppuccin-latte
+set background=light
 
 syntax enable
 
