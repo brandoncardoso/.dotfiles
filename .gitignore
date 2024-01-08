@@ -9,3 +9,5 @@ neovim/.config/coc
 tmux*.log
 mpv/.config/mpv/watch_later/
 shell/.bashrc_private
+shell/.tmux/plugins/*
+!shell/.tmux/plugins/tpm
