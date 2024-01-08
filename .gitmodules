@@ -14,3 +14,6 @@
 [submodule "alacritty/.config/alacritty/colors/dracula"]
 	path = alacritty/.config/alacritty/colors/dracula
 	url = git@github.com:dracula/alacritty.git
+[submodule "shell/.tmux/plugins/tpm"]
+	path = shell/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
