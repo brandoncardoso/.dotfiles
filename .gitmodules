@@ -17,3 +17,6 @@
 [submodule "shell/.tmux/plugins/tpm"]
 	path = shell/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "alacritty/.config/alacritty/colors/catppuccin"]
+	path = alacritty/.config/alacritty/colors/catppuccin
+	url = git@github.com:catppuccin/alacritty.git
