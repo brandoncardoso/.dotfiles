@@ -4,6 +4,18 @@
 [user]
 	useConfigOnly = true
 	name = Brandon Cardoso
+	email = 1226170+brandoncardoso@users.noreply.github.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII88Lutdjo7+iONllO61HhzKRJFl985sErFYu2VjjH/Z
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = "/mnt/c/Users/bran/AppData/Local/1Password/app/8/op-ssh-sign-wsl"
+
+[commit]
+	gpgsign = true
+
 
 [core]
 	editor = nvim
@@ -118,3 +130,8 @@
 	td = tag --delete
 	tl = tag --list
 	whoami = !git config --get user.name && git config --get user.email
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
