@@ -34,3 +34,5 @@ fi
 
 # too much vim
 alias :q='exit'
+
+alias d='docker'
