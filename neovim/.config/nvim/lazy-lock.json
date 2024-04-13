@@ -1,0 +1,15 @@
+{
+  "catppuccin": { "branch": "main", "commit": "08c6417bdc3b29e5f8c53e2cfe4067f288d49a54" },
+  "comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
+  "focus.nvim": { "branch": "master", "commit": "4135f976afe5d6e1fe66dff121db9d06643f439f" },
+  "gitsigns.nvim": { "branch": "main", "commit": "d96ef3bbff0bdbc3916a220f5c74a04c4db033f2" },
+  "indent-blankline.nvim": { "branch": "master", "commit": "3d08501caef2329aba5121b753e903904088f7e6" },
+  "lazy.nvim": { "branch": "main", "commit": "31ddbea7c10b6920c9077b66c97951ca8682d5c8" },
+  "lualine.nvim": { "branch": "master", "commit": "0a5a66803c7407767b799067986b4dc3036e1983" },
+  "nvim-surround": { "branch": "main", "commit": "a4e30d33add8a9743b4f518b3a788b3c8e5def71" },
+  "nvim-tree.lua": { "branch": "master", "commit": "ddd1d6eb21c45433bdc65cc8015f2457998f2bf2" },
+  "nvim-treesitter": { "branch": "master", "commit": "ef267f0c285928ea3a0d3362a260a0728fd4a146" },
+  "nvim-web-devicons": { "branch": "master", "commit": "6e355632387a085f15a66ad68cf681c1d7374a04" },
+  "undotree": { "branch": "master", "commit": "aa93a7e5890dbbebbc064cd22260721a6db1a196" },
+  "vim-fugitive": { "branch": "master", "commit": "dac8e5c2d85926df92672bf2afb4fc48656d96c7" }
+}
