@@ -30,8 +30,8 @@ return {
 				},
 			})
 
-			vim.api.nvim_set_keymap('n', '<leader>f', ':NvimTreeToggle<cr>', { noremap = true })
-			vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<cr>', { noremap = true })
+			vim.api.nvim_set_keymap('n', '<C-f>', ':NvimTreeToggle<cr>', { noremap = true })
+			vim.api.nvim_set_keymap('n', '<C-r>', ':NvimTreeRefresh<cr>', { noremap = true })
 		end,
 	}
 }

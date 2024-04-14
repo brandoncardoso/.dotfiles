@@ -1,6 +1,7 @@
 require('settings')
 require('remap')
 require('lazy-init')
+require('lsp')
 
 ---------------------
 
