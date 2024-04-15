@@ -14,7 +14,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
 		vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 		vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-
 		vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
 		vim.keymap.set('n', '<leader>td', vim.lsp.buf.type_definition, opts)
 		vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
@@ -25,10 +24,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 		-- format on save
 		vim.api.nvim_create_autocmd('BufWritePre', {
+			buffer = ev.buf,
 			callback = function()
-				vim.lsp.buf.format { async = true }
+				vim.lsp.buf.format({
+					id = ev.data.client_id,
+					async = false,
+				})
 			end,
 		})
 	end,
 })
-
