@@ -120,3 +120,6 @@ export GOPATH="$HOME/var/go-dist:$HOME/src/go"
 
 export PATH=/home/bran/bin:$PATH
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+complete -o bashdefault -o default -F _fzf_path_completion nv
