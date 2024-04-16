@@ -7,6 +7,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		-- enable completion
 		vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
+		-- global binds
+		vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 
 		-- keybinds
 		local opts = { buffer = ev.buf }
