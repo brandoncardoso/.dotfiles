@@ -17,6 +17,7 @@ return {
 			local cmp = require('cmp')
 			local cmp_lsp = require('cmp_nvim_lsp')
 			local luasnip = require('luasnip')
+			local lspconfig = require('lspconfig')
 
 			local capabilities = vim.tbl_deep_extend(
 				"force",
@@ -30,11 +31,23 @@ return {
 				ensure_installed = {
 					'lua_ls',
 					'gopls',
+					'rust_analyzer',
 				},
 				handlers = {
 					function(server)
 						require('lspconfig')[server].setup({
 							capabilities = capabilities
+						})
+					end,
+					["rust_analyzer"] = function()
+						lspconfig.rust_analyzer.setup({
+							settings = {
+								["rust-analyzer"] = {
+									cargo = {
+										features = "all",
+									}
+								}
+							}
 						})
 					end,
 				},
