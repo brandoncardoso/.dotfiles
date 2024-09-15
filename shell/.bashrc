@@ -116,9 +116,7 @@ else
 fi
 
 # golang
-export GOPATH="$HOME/var/go-dist:$HOME/src/go"
-
-export PATH=/home/bran/bin:$PATH
+export GOPATH="$HOME/go"
 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
