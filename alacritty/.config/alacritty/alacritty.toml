@@ -1,4 +1,4 @@
-import = ["/home/bran/.config/alacritty/colors/catppuccin/catppuccin-latte.toml"]
+import = ["/home/bran/.config/alacritty/colors/catppuccin/catppuccin-mocha.toml"]
 live_config_reload = true
 working_directory = "None"
 

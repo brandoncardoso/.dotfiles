@@ -5,12 +5,11 @@ return {
 		priority = 1000,
 		config = function()
 			require('catppuccin').setup({
-				flavour = 'latte',
-
+				flavour = 'mocha',
 			})
 
 			vim.cmd.colorscheme 'catppuccin'
-			vim.opt.background = 'light'
+			vim.opt.background = 'dark'
 		end,
 	}
 }

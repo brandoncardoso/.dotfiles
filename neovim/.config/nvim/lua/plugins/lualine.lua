@@ -7,7 +7,7 @@ return {
 		config = function()
 			require('lualine').setup({
 				options = {
-					theme = 'ayu_light',
+					theme = 'palenight',
 				},
 				sections = {
 					lualine_c = { 'filename', 'searchcount', 'selectioncount' },
