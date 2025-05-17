@@ -19,6 +19,7 @@
 
 [core]
 	editor = nvim
+	hooksPath = .githooks
 
 [color]
 	ui = true
@@ -59,6 +60,7 @@
 [push]
 	default = current
 	autoSetupRemote = true
+	followTags = true
 
 [log]
 	decorate = full
@@ -73,7 +75,7 @@
 	markIgnoredLines = true
 
 [alias]
-	a = add
+	a = !git add
 	ap = add --patch
 	bl = blame
 	br = branch
@@ -82,8 +84,8 @@
 	brm = branch --move
 	cf = config
 	cfg = config --global
-	ch = checkout
-	chb = checkout -b
+	ch = !git checkout
+	chb = !git checkout -b
 	cl = clone
 	co = commit
 	coa = commit --amend
