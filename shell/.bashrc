@@ -121,3 +121,11 @@ export GOPATH="$HOME/go"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 complete -o bashdefault -o default -F _fzf_path_completion nv
+
+# pnpm
+export PNPM_HOME="/home/bran/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
