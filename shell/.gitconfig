@@ -75,7 +75,7 @@
 	markIgnoredLines = true
 
 [alias]
-	a = !git add
+	a = add
 	ap = add --patch
 	bl = blame
 	br = branch
