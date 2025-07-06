@@ -5,13 +5,13 @@
 	useConfigOnly = true
 	name = Brandon Cardoso
 	email = 1226170+brandoncardoso@users.noreply.github.com
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII88Lutdjo7+iONllO61HhzKRJFl985sErFYu2VjjH/Z
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFpFc0m96m3hhz2dOayBWiGYT1yIkLUAeBMFacw3NpfnSs41v/Zwlwaf+N6YE3wG6CHyT81ZBHtrbDKFCiv1x6yqxIyyyEypvpD1c2ci7Ayvm0gzZjqFVxh1wlF7zMDPLUJV1MTUiJr8Wug02r0Cihg53qDS/Qtm+cGQmzVgY3u0HzXN77edicMhg4wQaTh45Ex08yKJoqbYybbw5ge5nc9X/wEdSHD2a92unm8sixygCgVMqvbsA5XY2pnqVrj6fWeBrjKckTg5ZMwXF5KoQ7RCNrRZ3NgIi9jMpcL0mTYpBDbl938kB/DR8gMAV5k1rwR4N4oaHHFWvcRvn2jFD8nc49FYfidwx3q752+hgHxs1juyjNMVugR4jYw7cnXFOpMyeeu605Smu50KLoLObkLoLB5BGBL3OFsdhUtd9dFKs5ST23haiR5fJp6oh4BGbpUbH1oQg+qzJ3AmjlRdzP+RL1A8xcOWuNzXlt9tassBccWPGQCR8/r2/KnOm4jI8=
 
 [gpg]
 	format = ssh
 
 [gpg "ssh"]
-	program = "/mnt/c/Users/bran/AppData/Local/1Password/app/8/op-ssh-sign-wsl"
+	program = "/opt/1Password/op-ssh-sign"
 
 [commit]
 	gpgsign = true
