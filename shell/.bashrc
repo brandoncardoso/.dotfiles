@@ -117,7 +117,10 @@ fi
 
 # golang
 export GOPATH="$HOME/go"
-
+case ":$PATH:" in
+    *":$GOPATH/bin:"*) ;;
+    *) export PATH="$GOPATH/bin:$PATH" ;;
+esac
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 complete -o bashdefault -o default -F _fzf_path_completion nv
