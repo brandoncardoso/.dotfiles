@@ -1,6 +1,3 @@
-import = ["/home/bran/.config/alacritty/colors/catppuccin/catppuccin-mocha.toml"]
-live_config_reload = true
-working_directory = "None"
 
 [bell]
 animation = "EaseOutExpo"
@@ -19,7 +16,7 @@ shape = "Block"
 size = 12
 
 [font.normal]
-family = "FiraCode Nerd Font"
+family = "Commit Mono Nerd Font"
 
 [hints]
 alphabet = "jfkdls;ahgurieowpq"
@@ -45,7 +42,7 @@ history = 10000
 save_to_clipboard = true
 
 [window]
-dynamic_padding = false
+dynamic_padding = true
 dynamic_title = true
 opacity = 1
 title = "Alacritty"
@@ -57,3 +54,8 @@ instance = "Alacritty"
 [window.padding]
 x = 8
 y = 8
+
+[general]
+live_config_reload = true
+working_directory = "None"
+import = ["/home/bran/.config/alacritty/colors/catppuccin/catppuccin-mocha.toml"]
