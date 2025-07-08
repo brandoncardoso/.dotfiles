@@ -8,10 +8,12 @@ return {
 			require('lualine').setup({
 				options = {
 					theme = 'palenight',
+					component_separators = { left = '\\', right = '/' },
+					section_separators = { left = '', right = '' },
 				},
 				sections = {
 					lualine_c = { 'filename', 'searchcount', 'selectioncount' },
-					lualine_x = { 'encoding', 'fileformat', 'filetype', 'filesize' },
+					lualine_x = { 'encoding', 'fileformat', 'lsp_status', 'filetype', 'filesize' },
 				}
 			})
 		end,
