@@ -123,7 +123,7 @@ case ":$PATH:" in
     *) export PATH="$GOPATH/bin:$PATH" ;;
 esac
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval "$(fzf --bash)"
 complete -o bashdefault -o default -F _fzf_path_completion nv
 
 # pnpm
