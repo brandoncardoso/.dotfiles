@@ -60,7 +60,7 @@ source /usr/share/git/completion/git-prompt.sh
 if [ "$color_prompt" = yes ]; then
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 	export GIT_PS1_SHOWDIRTYSTATE=1
-    PS1='\[\e[49;38;5;31m\]\w$(__git_ps1 "\[\e[0m\]  \[\e[49;38;5;105m\]%s\[\e[0m\]")\[\e[0m\]\$\[\e[0m\] '
+    PS1='\[\e[34m\]\w$(__git_ps1 "\[\e[0m\]  \[\e[33m\]%s\[\e[0m\]")\[\e[0m\]\$\[\e[0m\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -98,7 +98,10 @@ fi
 
 export PATH="${PATH}:${HOME}/.local/bin/"
 
-eval "$(dircolors ~/.dir_colors/catppuccin)"
+if [ -f ~/.dircolors ]; then
+    echo "dircolors loaded"
+    eval "$(dircolors ~/.dircolors)"
+fi 
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
   tmux attach || tmux new
