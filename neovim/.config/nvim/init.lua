@@ -3,8 +3,6 @@ require('remap')
 require('lazy-init')
 require('lsp')
 
----------------------
-
 -- resize splits on window resize
 vim.api.nvim_create_autocmd('VimResized', {
 	pattern = '*',
@@ -14,8 +12,7 @@ vim.api.nvim_create_autocmd('VimResized', {
 	end,
 })
 
-
-vim.cmd[[
+vim.cmd [[
 if has("persistent_undo")
 let target_path = expand('~/.config/nvim/undo')
 
@@ -30,3 +27,13 @@ let &undodir=target_path
 set undofile
 endif
 ]]
+
+vim.opt.list = true
+vim.opt.listchars = {
+	tab = "|-",
+	nbsp = "~",
+	trail = "*",
+	extends = ">",
+	precedes = "<",
+	multispace = "..",
+}
