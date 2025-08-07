@@ -8,7 +8,7 @@ return {
 			require('Comment').setup({
 				toggler = {
 					line = 'gcc', -- toggle comment for line
-					block = 'gbc', -- toggle ocmment for block
+					block = 'gbc', -- toggle comment for block
 				},
 				extra = {
 					eol = 'gcA', -- add comment to end of line
