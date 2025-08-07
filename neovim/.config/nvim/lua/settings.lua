@@ -23,7 +23,7 @@ vim.opt.errorbells = false
 vim.opt.visualbell = false
 
 -- set lines in view at edges of screen
-vim.opt.scrolloff = 999 -- current line centered
+vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
 vim.opt.sidescroll = 1
 
