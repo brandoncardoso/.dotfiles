@@ -27,13 +27,3 @@ let &undodir=target_path
 set undofile
 endif
 ]]
-
-vim.opt.list = true
-vim.opt.listchars = {
-	tab = "|-",
-	nbsp = "~",
-	trail = "*",
-	extends = ">",
-	precedes = "<",
-	multispace = "..",
-}

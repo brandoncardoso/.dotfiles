@@ -35,10 +35,11 @@ vim.opt.shiftround = true -- round up indents
 vim.opt.completeopt = 'longest,menuone,noinsert,noselect'
 
 -- show special characters
-vim.opt.list = true    
+vim.opt.list = true
 vim.opt.listchars:append({
 	trail = '◼',
 	tab = '┃ ',
+	multispace = "..",
 	leadmultispace = '┃ ',
 	extends = '❯',
 	precedes = '❮',
