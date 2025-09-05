@@ -59,5 +59,4 @@ y = 8
 [general]
 live_config_reload = true
 working_directory = "None"
-import = ["/home/bran/.config/alacritty/colors/catppuccin/catppuccin-mocha.toml"]
-
+import = ["/home/bran/.config/alacritty/colors/everforest.toml"]
