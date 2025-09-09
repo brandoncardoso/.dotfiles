@@ -1,21 +1,23 @@
 .netrwhist
 
-#vim
+# vim
 vim/.vim/bundle/
 !vim/.vim/bundle/Vundle.vim
 *.swp
 
-#neovim
+# neovim
 neovim/.config/*
 !neovim/.config/nvim
 neovim/.config/nvim/plugged/*
 neovim/.config/nvim/undo/*
 
-#tmux
+# tmux
 tmux*.log
-shell/.tmux/plugins/*
-!shell/.tmux/plugins/tpm
+tmux/.tmux/plugins/*
+!tmux/.tmux/plugins/tpm
 
+# mpv
 mpv/.config/mpv/watch_later/
 
-shell/.bashrc_private
+# bash
+bash/.bashrc_private
