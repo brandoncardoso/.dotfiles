@@ -1,9 +1,0 @@
-[Unit]
-Description=Timer for liquidctl-info service
-
-[Timer]
-OnUnitInactiveSec=10s
-OnBootSec=10s
-
-[Install]
-WantedBy=timers.target
