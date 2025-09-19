@@ -98,6 +98,9 @@
 	i = init
 	l = log --graph
 	la = log --graph --all
+	lfsl = lfs logs last
+	lfsls = lfs ls-files
+	lfsst = lfs status
 	m = merge
 	ms = merge --squash
 	pl = pull
