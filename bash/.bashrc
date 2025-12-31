@@ -147,3 +147,6 @@ export PATH="$PATH:/home/bran/.influxdb/"
 
 PATH="$HOME/.cargo/bin:$PATH"
 export PATH
+
+# default editor for `systemctl edit`
+export SYSTEMD_EDITOR=vim
