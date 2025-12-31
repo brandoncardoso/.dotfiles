@@ -1,11 +1,7 @@
 return {
 	{
 		'ibhagwan/fzf-lua',
-		dependencies = {
-			'nvim-tree/nvim-web-devicons',
-			'junegunn/fzf',
-			'sharkdp/bat',
-		},
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
 		config = function()
 			require('fzf-lua').setup({})
 
