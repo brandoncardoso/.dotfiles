@@ -1,9 +1,12 @@
+-- NOTE: Requires tree-sitter-cli installed
+-- https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md
+
 return {
 	{
 		'nvim-treesitter/nvim-treesitter',
 		lazy = false,
 		build = ':TSUpdate',
-		init = function()
+		config = function()
 			local ensure_installed = {
 				'javascript',
 				'typescript',
@@ -23,21 +26,24 @@ return {
 				"markdown",
 			}
 
-			vim.defer_fn(function() require("nvim-treesitter").install(ensure_installed) end, 1000)
-			require("nvim-treesitter").update()
+			local treesitter = require("nvim-treesitter")
+			treesitter.setup()
+			treesitter.install(ensure_installed)
 
-			-- auto-start highlights & indentation
 			vim.api.nvim_create_autocmd("FileType", {
-				desc = "User: enable treesitter highlighting",
-				callback = function(ctx)
-					-- highlights
-					local hasStarted = pcall(vim.treesitter.start) -- errors for filetypes with no parser
-
-					-- indent
-					local noIndent = {}
-					if hasStarted and not vim.list_contains(noIndent, ctx.match) then
-						vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+				callback = function()
+					-- syntax highlighting, provided by neovim
+					local ok = pcall(vim.treesitter.start)
+					if not ok then
+						return -- failed to start treesitter
 					end
+
+					-- folds, provided by neovim
+					vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+					vim.wo[0][0].foldmethod = 'expr'
+
+					-- indentation, provided by nvim-treesitter
+					vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 				end,
 			})
 		end

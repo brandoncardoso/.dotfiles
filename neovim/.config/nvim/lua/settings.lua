@@ -61,3 +61,6 @@ vim.opt.formatoptions['o'] = false
 
 -- reasonable tab completion
 vim.opt.wildmode = 'full'
+
+-- default fold level
+vim.opt.foldlevel = 99 -- 0 = all folded
