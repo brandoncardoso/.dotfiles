@@ -116,6 +116,7 @@
 	reh1 = reset --hard HEAD~1
 	res = reset --soft
 	rs = restore
+	rsp = restore --patch
 	rss = restore --staged
 	rv = revert
 	sh = stash push

@@ -36,3 +36,5 @@ fi
 alias :q='exit'
 
 alias d='docker'
+
+alias ansible-activate='source "$HOME/var/venv/ansible/bin/activate"'
