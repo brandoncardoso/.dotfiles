@@ -19,6 +19,7 @@
 [core]
 	editor = nvim
 	hooksPath = .githooks
+	excludesFile = ~/.gitignore_global
 
 [color]
 	ui = true
