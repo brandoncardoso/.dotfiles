@@ -84,8 +84,6 @@
 	brm = branch --move
 	cf = config
 	cfg = config --global
-	ch = !git checkout
-	chb = !git checkout -b
 	cl = clone
 	co = commit
 	coa = commit --amend
@@ -132,6 +130,8 @@
 	smd = submodule deinit
 	smu = submodule update --remote --merge
 	st = status
+	sw = switch
+	swc = switch --create
 	t = tag
 	tm = tag --message
 	td = tag --delete
