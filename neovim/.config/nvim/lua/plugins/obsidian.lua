@@ -64,11 +64,12 @@ return {
 						aliases = note.aliases,
 						tags = note.tags,
 						status = (note.metadata and note.metadata.status) or "seedling",
+						modified = os.date("!%Y-%m-%dT%H:%M:%SZ"),
 					}
 
 					if note.metadata then
 						for k, v in pairs(note.metadata) do
-							if k ~= "title" and k ~= "aliases" and k ~= "tags" then
+							if k ~= "title" and k ~= "aliases" and k ~= "tags" and k ~= "modified" then
 								out[k] = v
 							end
 						end
