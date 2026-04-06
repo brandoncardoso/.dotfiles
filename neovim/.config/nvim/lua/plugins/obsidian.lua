@@ -49,31 +49,17 @@ return {
 			frontmatter = {
 				enabled = true,
 				func = function(note)
-					local title = note.metadata and note.metadata.title
-					if not title then
-						-- "digital-garden" → "Digital Garden"
-						title = (note.title or note.id):gsub("-", " "):gsub("(%a)([%w]*)", function(first, rest)
+					local out = note.metadata or {}
+
+					if not out.title then
+						out.title = (note.title or note.id):gsub("-", " "):gsub("(%a)([%w]*)", function(first, rest)
 							return first:upper() .. rest
 						end)
 					end
 
-					note:add_alias(title:lower())
-
-					local out = {
-						title = title,
-						aliases = note.aliases,
-						tags = note.tags,
-						status = (note.metadata and note.metadata.status) or "seedling",
-						modified = os.date("!%Y-%m-%dT%H:%M:%SZ"),
-					}
-
-					if note.metadata then
-						for k, v in pairs(note.metadata) do
-							if k ~= "title" and k ~= "aliases" and k ~= "tags" and k ~= "modified" then
-								out[k] = v
-							end
-						end
-					end
+					out.aliases = #note.aliases > 0 and note.aliases or nil
+					out.tags = note.tags
+					out.modified = os.date("!%Y-%m-%dT%H:%M:%SZ")
 
 					return out
 				end,
@@ -81,7 +67,7 @@ return {
 
 			note_id_func = function(title)
 				if title then
-					return title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+					return title:gsub("[^A-Za-z0-9%s-]", ""):lower():gsub("%s+", " "):match("^(.-)%s*$")
 				end
 				return tostring(os.time())
 			end,
