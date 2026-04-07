@@ -29,20 +29,12 @@ return {
 				{
 					name = "wiki",
 					path = "~/wiki",
-					overrides = {
-						notes_subdir = "notes",
-						new_notes_location = "notes_subdir",
-					}
 				},
 				{
 					name = "auto",
 					path = function()
 						return assert(vim.fs.root(0, ".git") or vim.fn.expand("%:p:h"))
 					end,
-					overrides = {
-						notes_subdir = vim.NIL,
-						new_notes_location = "current_dir",
-					},
 				},
 			},
 
@@ -59,7 +51,6 @@ return {
 
 					out.aliases = #note.aliases > 0 and note.aliases or nil
 					out.tags = note.tags
-					out.modified = os.date("!%Y-%m-%dT%H:%M:%SZ")
 
 					return out
 				end,
