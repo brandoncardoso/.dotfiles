@@ -15,6 +15,7 @@ return {
 			{ "<leader>wn", "<cmd>Obsidian today<cr>",        desc = "Wiki: today's note" },
 			{ "<leader>wt", "<cmd>Obsidian tags<cr>",         desc = "Wiki: tags" },
 			{ "<leader>wc", "<cmd>Obsidian new<cr>",          desc = "Wiki: create note" },
+			{ "<leader>wr", "<cmd>Obsidian rename<cr>",       desc = "Wiki: rename note" },
 			{ "<leader>wl", "<cmd>Obsidian link<cr>",         desc = "Wiki: link selection", mode = "v" },
 			{ "gf",         "<cmd>Obsidian follow_link<cr>",  desc = "Go to file",           ft = "markdown" },
 			{
