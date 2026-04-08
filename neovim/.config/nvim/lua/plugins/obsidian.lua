@@ -49,7 +49,12 @@ return {
 						end)
 					end
 
-					out.aliases = #note.aliases > 0 and note.aliases or nil
+					-- filter out aliases that match the note ID (filename) to avoid
+					-- duplicate slugs in quartz's "shortest" link resolution
+					local dominated_aliases = vim.tbl_filter(function(a)
+						return a ~= note.id
+					end, note.aliases)
+					out.aliases = #dominated_aliases > 0 and dominated_aliases or nil
 					out.tags = note.tags
 
 					return out
