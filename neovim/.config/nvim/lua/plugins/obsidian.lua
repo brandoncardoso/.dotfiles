@@ -70,12 +70,6 @@ return {
 
 			link = {
 				format = "shortest",
-				style = function(opts)
-					if opts.label then
-						return string.format("[[%s]]", opts.label)
-					end
-					return string.format("[[%s]]", opts.id)
-				end,
 			},
 
 			daily_notes = {
