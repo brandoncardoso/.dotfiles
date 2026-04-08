@@ -102,6 +102,11 @@ return {
 			local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 			cmp.setup({
+				formatting = {
+					format = function(entry, item)
+						return require("nvim-highlight-colors").format(entry, item)
+					end,
+				},
 				snippet = {
 					expand = function(args)
 						require('luasnip').lsp_expand(args.body)
