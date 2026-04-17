@@ -3103,7 +3103,9 @@
                   "keyActionType": "none"
                 },
                 {
-                  "keyActionType": "none"
+                  "keyActionType": "playMacro",
+                  "macroIndex": 1,
+                  "macroArguments": []
                 },
                 {
                   "keyActionType": "keystroke",
