@@ -1,5 +1,6 @@
 vim.keymap.set('n', '<Space>', '<NOP>', { silent = true })
 vim.g.mapleader = ' '
+vim.g.maplocallaeader = '\\'
 
 vim.keymap.set('n', '<leader>rr', function()
 	dofile(vim.fn.stdpath('config') .. '/init.lua')
