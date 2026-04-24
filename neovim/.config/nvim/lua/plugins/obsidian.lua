@@ -32,12 +32,6 @@ return {
 					name = "wiki",
 					path = "~/wiki",
 				},
-				{
-					name = "auto",
-					path = function()
-						return assert(vim.fs.root(0, ".git") or vim.fn.expand("%:p:h"))
-					end,
-				},
 			},
 
 			frontmatter = {
