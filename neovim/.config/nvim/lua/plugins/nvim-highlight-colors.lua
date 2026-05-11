@@ -11,7 +11,7 @@ return {
 	"brenoprata10/nvim-highlight-colors",
 	config = function()
 		require("nvim-highlight-colors").setup({
-			enable_tailwind = true,
+			enable_tailwind = false,
 			enable_var_usage = true,
 		})
 	end
