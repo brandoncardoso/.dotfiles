@@ -1,3 +1,5 @@
+[terminal]
+shell = "/usr/bin/fish"
 
 [bell]
 animation = "EaseOutExpo"
@@ -17,7 +19,16 @@ size = 12
 offset.y = 2
 
 [font.normal]
-family = "Commit Mono Nerd Font"
+family = "CommitMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "CommitMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "CommitMono Nerd Font"
+style = "Italic"
 
 [hints]
 alphabet = "jfkdls;ahgurieowpq"

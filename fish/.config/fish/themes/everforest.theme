@@ -1,0 +1,35 @@
+# name: 'Everforest Dark'
+[dark]
+# preferred_background: 272e33
+fish_color_autosuggestion 475258 --theme=everforest
+fish_color_cancel --reverse --theme=everforest
+fish_color_command a7c080 --theme=everforest
+fish_color_comment 475258 --italics --theme=everforest
+fish_color_cwd a7c080 --theme=everforest
+fish_color_cwd_root e67e80 --theme=everforest
+fish_color_end 83c092 --theme=everforest
+fish_color_error e67e80 --theme=everforest
+fish_color_escape d699b6 --theme=everforest
+fish_color_history_current d3c6aa --bold --theme=everforest
+fish_color_host 7fbbb3 --theme=everforest
+fish_color_host_remote dbbc7f --theme=everforest
+fish_color_keyword d699b6 --theme=everforest
+fish_color_normal --reset --theme=everforest
+fish_color_operator 83c092 --theme=everforest
+fish_color_option d3c6aa --theme=everforest
+fish_color_param d3c6aa --theme=everforest
+fish_color_quote dbbc7f --theme=everforest
+fish_color_redirection 83c092 --bold --theme=everforest
+fish_color_search_match --background=475258 --bold --theme=everforest
+fish_color_selection d3c6aa --background=475258 --bold --theme=everforest
+fish_color_status e67e80 --theme=everforest
+fish_color_user 7fbbb3 --theme=everforest
+fish_color_valid_path --underline --theme=everforest
+fish_pager_color_completion d3c6aa --theme=everforest
+fish_pager_color_description dbbc7f --italics --theme=everforest
+fish_pager_color_prefix --bold --underline --theme=everforest
+fish_pager_color_progress 272e33 --background=a7c080 --bold --theme=everforest
+fish_pager_color_selected_background --background=475258 --theme=everforest
+fish_pager_color_selected_completion
+fish_pager_color_selected_description
+fish_pager_color_selected_prefix

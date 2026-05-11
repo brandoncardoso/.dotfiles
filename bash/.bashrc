@@ -151,3 +151,6 @@ export PATH
 export EDITOR=nvim
 # default editor for `systemctl edit`
 export SYSTEMD_EDITOR=vim
+
+
+eval "$(zoxide init bash)"
