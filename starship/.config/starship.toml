@@ -1,4 +1,4 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # insert blankline between shell prompts
-add_newline = true
+add_newline = false
