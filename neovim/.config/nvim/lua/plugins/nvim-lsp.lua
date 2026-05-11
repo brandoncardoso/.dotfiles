@@ -42,6 +42,21 @@ return {
 							capabilities = capabilities
 						})
 					end,
+					["gopls"] = function()
+						lspconfig.gopls.setup({
+							settings = {
+								gopls = {
+									analyses = {
+										unusedparams = true,
+										unusedwrite = true,
+										nilness = true,
+										shadow = true,
+									},
+									staticcheck = true,
+								},
+							},
+						})
+					end,
 					["rust_analyzer"] = function()
 						lspconfig.rust_analyzer.setup({
 							settings = {
