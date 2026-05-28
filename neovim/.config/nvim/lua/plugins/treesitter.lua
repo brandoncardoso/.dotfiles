@@ -10,6 +10,7 @@ return {
 			local ensure_installed = {
 				'javascript',
 				'typescript',
+				'svelte',
 				'go',
 				'java',
 				'html',
