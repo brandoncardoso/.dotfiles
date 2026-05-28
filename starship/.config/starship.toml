@@ -2,3 +2,13 @@
 
 # insert blankline between shell prompts
 add_newline = false
+
+[directory]
+fish_style_pwd_dir_length = 3
+truncation_length = 3
+truncate_to_repo = false
+truncation_symbol = "…/"
+repo_root_style = "bold purple"
+
+[status]
+disabled = false
