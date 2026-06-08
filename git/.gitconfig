@@ -123,6 +123,7 @@
 	shl = stash list
 	shm = stash push --message
 	shp = stash pop
+	shs = stash show
 	shu = stash push --include-untracked
 	sm = submodule
 	sma = submodule add
