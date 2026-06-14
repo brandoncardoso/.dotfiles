@@ -28,7 +28,12 @@ return {
 
 			-- conceal level: 0 = show raw LaTeX, 2 = full concealment
 			vim.g.vimtex_syntax_conceal_disable = 0
-			vim.opt.conceallevel = 1
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = { "tex", "latex" },
+				callback = function()
+					vim.opt_local.conceallevel = 1
+				end,
+			})
 
 			-- vim.g.vimtex_imaps_enabled = 0
 
