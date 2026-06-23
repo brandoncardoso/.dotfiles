@@ -34,7 +34,6 @@ return {
 					'ts_ls', -- typescript
 					'gopls',
 					'rust_analyzer',
-					'omnisharp',
 				},
 				handlers = {
 					function(server)
