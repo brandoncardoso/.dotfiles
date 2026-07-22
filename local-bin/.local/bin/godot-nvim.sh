@@ -1,15 +1,11 @@
 #!/bin/sh
 # godot-nvim PROJECT FILE LINE COL
-exec >>/tmp/godot-nvim.log 2>&1
-set -x
-
 PROJECT="$1"
 FILE="$2"
 LINE="${3:-0}"
 COL="${4:-0}"
 PIPE="$PROJECT/server.pipe"
 NVIM_CMD="nvim --listen '$PIPE' '+$((LINE + 1))' '$FILE'"
-
 
 # 1. nvim server already up -> send it the file
 if [ -S "$PIPE" ] && nvim --server "$PIPE" --remote-expr "1" >/dev/null 2>&1; then
