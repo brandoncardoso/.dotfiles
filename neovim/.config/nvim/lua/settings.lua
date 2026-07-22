@@ -13,7 +13,7 @@ vim.opt.laststatus = 2
 
 -- display incomplete commands
 vim.opt.showcmd = true
-vim.opt.cmdheight = 1
+vim.opt.cmdheight = 2
 
 -- let same file scroll differently in seperate panes
 vim.opt.scrollbind = false
