@@ -133,35 +133,4 @@ return {
 			})
 		end,
 	},
-	{
-		'seblyng/roslyn.nvim',
-		ft = 'cs',
-		dependencies = { 'hrsh7th/cmp-nvim-lsp' },
-		opts = function()
-			return {
-				config = {
-					capabilities = vim.tbl_deep_extend(
-						'force',
-						{},
-						vim.lsp.protocol.make_client_capabilities(),
-						require('cmp_nvim_lsp').default_capabilities()
-					),
-					settings = {
-						['csharp|inlay_hints'] = {
-							csharp_enable_inlay_hints_for_implicit_object_creation = true,
-							csharp_enable_inlay_hints_for_implicit_variable_types = true,
-						},
-						['csharp|code_lens'] = {
-							dotnet_enable_references_code_lens = true,
-						},
-					},
-				},
-				exe = {
-					'dotnet',
-					vim.fs.joinpath(vim.fn.stdpath('data'), 'roslyn', 'Microsoft.CodeAnalysis.LanguageServer.dll'),
-				},
-				filewatching = true,
-			}
-		end,
-	},
 }
