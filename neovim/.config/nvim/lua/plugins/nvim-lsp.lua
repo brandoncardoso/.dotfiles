@@ -12,18 +12,56 @@ return {
 			'hrsh7th/nvim-cmp',
 			'l3mon4d3/luasnip',
 			'saadparwaiz1/cmp_luasnip',
+			'nvim-highlight-colors',
 		},
 		config = function()
 			local cmp = require('cmp')
 			local cmp_lsp = require('cmp_nvim_lsp')
 			local luasnip = require('luasnip')
-			local lspconfig = vim.lsp.config('*', {
+
+			-- defaults for all language servers
+			vim.lsp.config('*', {
 				capabilities = vim.tbl_deep_extend(
 					"force",
-					{},
 					vim.lsp.protocol.make_client_capabilities(),
 					cmp_lsp.default_capabilities()
-				)
+				),
+			})
+
+			vim.lsp.config('gopls', {
+				settings = {
+					gopls = {
+						analyses = {
+							unusedparams = true,
+							unusedwrite = true,
+							nilness = true,
+							shadow = true,
+						},
+						staticcheck = true,
+					},
+				},
+			})
+
+			vim.lsp.config('rust_analyzer', {
+				settings = {
+					["rust-analyzer"] = {
+						cargo = { features = "all" },
+					},
+				},
+			})
+
+			vim.lsp.config('roslyn_ls', {
+				filetypes = { 'cs' },
+				root_markers = { '*.sln', '*.csproj', '.git' },
+				settings = {
+					['csharp|inlay_hints'] = {
+						csharp_enable_inlay_hints_for_implicit_object_creation = true,
+						csharp_enable_inlay_hints_for_implicit_variable_types = true,
+					},
+					['csharp|code_lens'] = {
+						dotnet_enable_references_code_lens = true,
+					},
+				},
 			})
 
 			require('mason').setup()
@@ -33,44 +71,14 @@ return {
 					'ts_ls', -- typescript
 					'gopls',
 					'rust_analyzer',
+					'roslyn_ls', -- c# csharp
 				},
-				handlers = {
-					function(server)
-						require('lspconfig')[server].setup({
-							capabilities = capabilities
-						})
-					end,
-					["gopls"] = function()
-						lspconfig.gopls.setup({
-							settings = {
-								gopls = {
-									analyses = {
-										unusedparams = true,
-										unusedwrite = true,
-										nilness = true,
-										shadow = true,
-									},
-									staticcheck = true,
-								},
-							},
-						})
-					end,
-					["rust_analyzer"] = function()
-						lspconfig.rust_analyzer.setup({
-							settings = {
-								["rust-analyzer"] = {
-									cargo = {
-										features = "all",
-									}
-								}
-							}
-						})
-					end,
-				}
+				automatic_enable = {
+					exclude = { 'omnisharp' },
+				},
 			})
 
 			local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
 			cmp.setup({
 				formatting = {
 					format = function(entry, item)
@@ -79,13 +87,12 @@ return {
 				},
 				snippet = {
 					expand = function(args)
-						require('luasnip').lsp_expand(args.body)
+						luasnip.lsp_expand(args.body)
 					end,
 				},
 				window = {
 					completion = cmp.config.window.bordered(),
 					documentation = cmp.config.window.bordered(),
-					diagnostics = cmp.config.window.bordered(),
 				},
 				mapping = cmp.mapping.preset.insert({
 					['<C-Space>'] = cmp.mapping.complete(),
@@ -95,28 +102,24 @@ return {
 							if luasnip.expandable() then
 								luasnip.expand()
 							else
-								cmp.confirm({
-									select = true,
-								})
+								cmp.confirm({ select = true })
 							end
 						else
 							fallback()
 						end
 					end),
-
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
-							cmp.select_next_item()
+							cmp.select_next_item(cmp_select)
 						elseif luasnip.locally_jumpable(1) then
 							luasnip.jump(1)
 						else
 							fallback()
 						end
 					end, { "i", "s" }),
-
 					["<S-Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
-							cmp.select_prev_item()
+							cmp.select_prev_item(cmp_select)
 						elseif luasnip.locally_jumpable(-1) then
 							luasnip.jump(-1)
 						else
