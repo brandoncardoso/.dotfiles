@@ -1,0 +1,122 @@
+* {
+  font-family: "CommitMono Nerd Font", "Symbols Nerd Font Mono";
+  font-size: 14px;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  box-shadow: none;
+}
+
+window#waybar {
+  background: rgb(38, 38, 38);
+  color: #e6e9ef;
+}
+
+.modules-left {
+  padding: 4px 8px;
+}
+
+.modules-right {
+  padding: 4px 8px;
+}
+
+/* ── Workspaces ─────────────────────────────────────────── */
+
+#workspaces {
+}
+
+#workspaces button {
+  min-width: 24px;
+  border-radius: 4px;
+  color: rgba(255,255,255,0.6);
+  background: transparent;
+  padding: 0 4px;
+}
+
+#workspaces button.active {
+  color: #ffc87f;
+  background: rgba(255,255,255,0.2);
+}
+
+#workspaces button.occupied:not(.active) {
+  color: #ffc87f;
+}
+
+#workspaces button.urgent {
+  color: #f7768e;
+  background: rgba(247, 118, 142, 0.10);
+}
+
+/* ── Window title ───────────────────────────────────────── */
+
+#window {
+}
+
+/* ── Volume & Network ──────────────────────────────────── */
+
+#pulseaudio {
+  min-width: 16px;
+}
+
+#network {
+  min-width: 16px;
+}
+
+#backlight {
+  min-width: 10px;
+}
+
+/* ── Battery ────────────────────────────────────────────── */
+
+#battery.warning {
+  color: #ffc87f;
+}
+
+#battery.critical {
+  color: #f7768e;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: #80c8ff;
+}
+
+#cpu,
+#memory,
+#temperature,
+#battery {
+  border-radius: 4px;
+  background: rgba(255,255,255,0.1);
+  padding: 0 8px;
+}
+
+#temperature.warning {
+  font-weight: 600;
+  color: #ffc87f;
+}
+
+#temperature.critical {
+  font-weight: 600;
+  color: #f7768e;
+}
+
+/* ── Clock ──────────────────────────────────────────────── */
+
+#clock {
+  margin-left: 8px;
+}
+
+/* ── Tray ───────────────────────────────────────────────── */
+
+#tray {
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background: rgba(247, 118, 142, 0.12);
+}
