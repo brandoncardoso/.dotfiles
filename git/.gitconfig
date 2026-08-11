@@ -7,6 +7,9 @@
 	email = 1226170+brandoncardoso@users.noreply.github.com
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII88Lutdjo7+iONllO61HhzKRJFl985sErFYu2VjjH/Z
 
+[includeIf "gitdir:/mnt/secure/dev/brancardoso/*/**"]
+	path = /mnt/secure/dev/brancardoso/.gitconfig
+
 [gpg]
 	format = ssh
 
