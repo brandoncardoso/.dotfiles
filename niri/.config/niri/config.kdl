@@ -31,7 +31,7 @@ input {
     touchpad {
         // off
         tap
-        dwt // disable while typing
+        // dwt
         // dwtp
         // drag false
         // drag-lock
