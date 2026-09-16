@@ -630,3 +630,8 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
+
+debug {
+    // https://wiki.archlinux.org/title/Niri#Multi_GPU_Configuration
+    render-drm-device "/dev/dri/renderD129"
+}
