@@ -199,8 +199,8 @@ user_pref("signon.rememberSignons", false);
 user_pref("extensions.formautofill.addresses.enabled", false);
 user_pref("extensions.formautofill.creditCards.enabled", false);
 
-// PREF: disable passkeys
-user_pref("security.webauth.webauthn", false);
+// PREF: enable passkeys
+user_pref("security.webauth.webauthn", true);
 
 // PREF: hide weather on New Tab page
 user_pref("browser.newtabpage.activity-stream.showWeather", false);
