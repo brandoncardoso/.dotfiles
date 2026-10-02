@@ -142,6 +142,7 @@ user_pref("browser.profiles.enabled", true);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("browser.compactmode.show", true);
 user_pref("browser.privateWindowSeparation.enabled", false); // WINDOWS
+user_pref("browser.nova.enabled", false); // round af redesign
 
 /** AI ***/
 user_pref("browser.ai.control.default", "blocked");
